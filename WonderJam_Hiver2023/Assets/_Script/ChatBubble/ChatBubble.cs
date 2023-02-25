@@ -28,7 +28,7 @@ public class ChatBubble : MonoBehaviour
     }
 
     private SpriteRenderer backgroundSpriteRenderer;
-    private TMP_Text textMeshPro;
+    private TextMeshPro textMeshPro;
 
     [SerializeField] private float velocityTest;
 
@@ -37,7 +37,7 @@ public class ChatBubble : MonoBehaviour
     private void Awake()
     {
         backgroundSpriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
-        textMeshPro = transform.GetChild(1).GetComponent<TMP_Text>();
+        textMeshPro = transform.GetChild(1).GetComponent<TextMeshPro>();
     
     
     }
