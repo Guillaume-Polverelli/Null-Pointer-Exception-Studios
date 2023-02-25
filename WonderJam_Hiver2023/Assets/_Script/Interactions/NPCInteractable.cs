@@ -39,6 +39,10 @@ public class NPCInteractable : MonoBehaviour
             {
                 textToDisplay = FindObjectOfType<DialogueManager>().DisplayNextSentence(audioSource);
                 chatBubble.NextMessage(textToDisplay);
+                if (FindObjectOfType<DialogueManager>().isFinished())
+                {
+                    GameManager.Instance.TestQuest(dialogue.name);
+                }
             }
         }
         else

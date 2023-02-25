@@ -8,6 +8,8 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     private Queue<AudioClip> audioClips;
 
+    private Dialogue instanceDialogue;
+
 
     // Start is called before the first frame update
     void Start()
@@ -18,8 +20,8 @@ public class DialogueManager : MonoBehaviour
 
     public string StartDialogue(Dialogue dialogue, AudioSource audioSource)
     {
-
-        Debug.Log("Starting conversation with" + dialogue.name);
+        instanceDialogue = dialogue;
+        Debug.Log("Starting conversation with" + instanceDialogue.name);
 
         sentences.Clear();
         audioClips.Clear();
@@ -40,6 +42,8 @@ public class DialogueManager : MonoBehaviour
     {
         string sentence = sentences.Dequeue();
         AudioClip clip = audioClips.Dequeue();
+
+ 
         if(clip != null)
         {
             audioSource.PlayOneShot(clip);
@@ -49,6 +53,7 @@ public class DialogueManager : MonoBehaviour
 
     public bool isFinished()
     {
-        return (sentences.Count == 0);
+        return sentences.Count == 0;
+      
     }
 }
