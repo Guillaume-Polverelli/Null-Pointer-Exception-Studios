@@ -14,16 +14,15 @@ public class Character : MonoBehaviour
     [SerializeField] private float regenCooldown;
 
 
-    private float HP = 40f;
+    private float HP;
     private float timeCounter = 0f;
     public void Start()
     {
-        //HP = maxHP;
+        HP = maxHP;
     }
 
     public void Update()
     {
-        print(HP);
         progressBarHP.GetComponent<Image>().fillAmount =  (HP / maxHP);
         progressBarXP.GetComponent<Image>().fillAmount =  (XP / maxXP);
 
@@ -47,10 +46,10 @@ public class Character : MonoBehaviour
     }
 
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         HP -= damage;
-        if(HP <= 0)
+        if(HP <= 0f)
         {
             Die();
         }
@@ -68,6 +67,6 @@ public class Character : MonoBehaviour
     public void Die()
     {
         gameObject.SetActive(false);
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }

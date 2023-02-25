@@ -45,9 +45,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void ShowQuest()
+    {
+        titleQuest.gameObject.SetActive(true);
+        objectifQuest.gameObject.SetActive(true);
+        progressionQuest.gameObject.SetActive(true);
+    }
+
     public void UnlockQuest_1()
     {
         locker_Quest1.SetActive(false);
+        titleQuest.SetText("A la cueillette aux champignons !");
+        objectifQuest.SetText("Jacquie vous a commandité pour que vous lui rameniez trois gros champignons de la forêt. Il pourra peut-être alors vous en dire plus sur la prophétie...");
+        setTextQuest1("Total de champignons ramassés: " + mushroomCollected + "/3");
+        ShowQuest();
+    }
+
+    public void setTextQuest1(string progress)
+    {
+        progressionQuest.SetText(progress);
     }
 
     public void UnlockQuest_2()
