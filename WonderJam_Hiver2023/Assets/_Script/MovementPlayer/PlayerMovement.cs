@@ -52,4 +52,9 @@ public class PlayerMovement : MonoBehaviour
     {
         isStopped = condition;
     }
+
+    public bool getStopped()
+    {
+        return isStopped;
+    }
 }

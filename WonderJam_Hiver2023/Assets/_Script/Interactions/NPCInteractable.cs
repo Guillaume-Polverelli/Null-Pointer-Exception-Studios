@@ -8,7 +8,7 @@ public class NPCInteractable : MonoBehaviour
 
 
     [SerializeField] private ChatBubble chatBubble;
-    [SerializeField] private Transform Player;
+    [SerializeField] private GameObject Player;
 
     private string textToDisplay;
 
@@ -17,9 +17,9 @@ public class NPCInteractable : MonoBehaviour
     {
         if (dialogue.getStarted())
         {
-            Vector3 targetPosition = new Vector3(Player.position.x,
+            Vector3 targetPosition = new Vector3(Player.transform.position.x,
                                                   transform.position.y,
-                                                  Player.position.z);
+                                                  Player.transform.position.z);
             transform.LookAt(targetPosition);
         }
     }
@@ -31,6 +31,7 @@ public class NPCInteractable : MonoBehaviour
             {
                 gameObject.GetComponent<NPC_Behavior>().ChangeIsStopped(false);
                 chatBubble.DestroyChatBubble();
+                Player.GetComponent<PlayerMovement>().setStopped(false);
                 dialogue.setStarted(false);
             }
             else
