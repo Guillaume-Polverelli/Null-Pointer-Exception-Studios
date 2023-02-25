@@ -22,6 +22,9 @@ public class NPC_Behavior : MonoBehaviour
     [SerializeField] private float sightRange = 30.0f;
     [SerializeField] private float attackRange = 20.0f;
 
+    [SerializeField] private float walkSpeed;
+    [SerializeField] private float runSpeed;
+
     private bool bPlayerInSight;
     private bool bPlayerInAttackRange;
 
@@ -36,7 +39,7 @@ public class NPC_Behavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _animator.SetFloat("Velocity", 100.0f);
+        _animator.SetFloat("Velocity", _navMeshAgent.velocity.magnitude);
     }
 
     private void FixedUpdate()
@@ -64,6 +67,8 @@ public class NPC_Behavior : MonoBehaviour
 
     private void Patrouille()
     {
+
+        _navMeshAgent.speed = walkSpeed;
         if (_navMeshAgent.hasPath) FindDestinatiion();
 
         _navMeshAgent.SetDestination(FindDestinatiion());
@@ -107,6 +112,7 @@ public class NPC_Behavior : MonoBehaviour
 
     public void ChasePlayer()
     {
+        _navMeshAgent.speed = runSpeed;
         _navMeshAgent.SetDestination(Player.position);
     }
 

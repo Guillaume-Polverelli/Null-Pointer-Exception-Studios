@@ -473,6 +473,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 739323261}
     - target: {fileID: 9035743785972233135, guid: 2d9545d4ebcf74043b7bdf203fac6944, type: 3}
+      propertyPath: runSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9035743785972233135, guid: 2d9545d4ebcf74043b7bdf203fac6944, type: 3}
+      propertyPath: walkSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9035743785972233135, guid: 2d9545d4ebcf74043b7bdf203fac6944, type: 3}
+      propertyPath: sightRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9035743785972233135, guid: 2d9545d4ebcf74043b7bdf203fac6944, type: 3}
       propertyPath: attackRange
       value: 2
       objectReference: {fileID: 0}
