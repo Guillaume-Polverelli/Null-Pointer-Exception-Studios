@@ -2,16 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class ChatBubble : MonoBehaviour
 {
 
-    public static void Create(Transform parent, Vector3 localPosition, string text)
+    public void Create(string text)
     {
-        //Instantiate()
+        gameObject.SetActive(true);
+
+        Setup(text);
+
+        gameObject.GetComponent<Animation>().Play();
+
     }
+
+    public static void DestroyChatBubble(Transform chatbubble)
+    {
+        Destroy(chatbubble);
+    }
+
     private SpriteRenderer backgroundSpriteRenderer;
     private TextMeshPro textMeshPro;
+
+    [SerializeField] private float velocityTest;
 
 
 
@@ -24,7 +38,7 @@ public class ChatBubble : MonoBehaviour
     }
     private void Start()
     {
-        Setup("Hello World !");
+        Setup("Hello World ! udyfyg uygusy fbduyby byb ybfy wvybyc bfyb vwybvwy gbyv ");
     }
 
     private void Setup( string text)
@@ -40,5 +54,24 @@ public class ChatBubble : MonoBehaviour
         backgroundSpriteRenderer.transform.localPosition =
             new Vector3(backgroundSpriteRenderer.size.x / 2f, 0f) + offset;
 
+        StartCoroutine(Writer(text));
+
+    }
+
+    public IEnumerator Writer(string text)
+    {
+        float pourcentage = 0f;
+        float textVelocity = 1f / text.Length;
+
+        while(pourcentage < 1f)
+        {
+
+            pourcentage = pourcentage + textVelocity;
+            int nbCharacter = (int) (text.Length * pourcentage);
+
+            string h = text.Substring(0, nbCharacter);
+            textMeshPro.SetText(h);
+            yield return new WaitForSeconds(velocityTest);
+        }
     }
 }

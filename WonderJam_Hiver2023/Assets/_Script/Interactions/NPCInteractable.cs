@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class NPCInteractable : MonoBehaviour
 {
+    [SerializeField] private ChatBubble chatBubble;
     public void Interact()
     {
-        Debug.Log("Interact");
+        chatBubble.Create("Hello there !");
     }
 }
