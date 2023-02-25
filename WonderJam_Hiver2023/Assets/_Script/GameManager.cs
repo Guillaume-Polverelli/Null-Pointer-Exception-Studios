@@ -1,12 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
     [SerializeField] private GameObject locker_Quest1;
+    [SerializeField] private GameObject locker_Quest4;
+    [SerializeField] private GameObject locker_Quest6;
+
+    [SerializeField] private TextMeshProUGUI titleQuest;
+    [SerializeField] private TextMeshProUGUI objectifQuest;
+    [SerializeField] private TextMeshProUGUI progressionQuest;
+
+    private int mushroomCollected = 0;
+    private int sunflowerCollected = 0;
+    private bool parchmentCollected = false;
+    private bool artefactCollected = false;
+    private bool swordCollected = false;
 
     public void Awake()
     {
