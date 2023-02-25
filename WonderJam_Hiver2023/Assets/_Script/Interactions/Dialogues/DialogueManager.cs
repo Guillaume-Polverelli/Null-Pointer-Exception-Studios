@@ -12,8 +12,9 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    public string StartDialogue(Dialogue dialogue)
     {
+
         Debug.Log("Starting conversation with" + dialogue.name);
 
         sentences.Clear();
@@ -23,24 +24,14 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
-        DisplayNextSentence();
+        return DisplayNextSentence();
     }
 
-    public void DisplayNextSentence()
+    public string DisplayNextSentence()
     {
-        if(sentences.Count == 0)
-        {
-            EndDialogue();
-            return;
-        }
 
         string sentence = sentences.Dequeue();
-        Debug.Log(sentence);
-    }
-
-    public void EndDialogue()
-    {
-        Debug.Log("End of conversation");
+        return sentence;
     }
 
     public bool isFinished()

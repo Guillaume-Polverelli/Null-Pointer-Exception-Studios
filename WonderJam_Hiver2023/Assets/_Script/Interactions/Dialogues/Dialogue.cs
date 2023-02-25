@@ -10,5 +10,15 @@ public class Dialogue
     [TextArea(3, 10)]
     public string[] sentences;
 
-    public bool hasStarted = false;
+    private bool hasStarted = false;
+
+    public void setStarted(bool condition)
+    {
+        hasStarted = condition;
+    }
+
+    public bool getStarted()
+    {
+        return hasStarted;
+    }
 }

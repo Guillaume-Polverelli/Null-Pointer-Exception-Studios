@@ -17,9 +17,14 @@ public class ChatBubble : MonoBehaviour
 
     }
 
-    public static void DestroyChatBubble(Transform chatbubble)
+    public void NextMessage(string text)
     {
-        Destroy(chatbubble);
+        Setup(text);
+    }
+
+    public void DestroyChatBubble()
+    {
+        gameObject.SetActive(false);
     }
 
     private SpriteRenderer backgroundSpriteRenderer;
@@ -35,10 +40,6 @@ public class ChatBubble : MonoBehaviour
         textMeshPro = transform.Find("Text").GetComponent<TextMeshPro>();
     
     
-    }
-    private void Start()
-    {
-        Setup("Hello World ! udyfyg uygusy fbduyby byb ybfy wvybyc bfyb vwybvwy gbyv ");
     }
 
     private void Setup( string text)

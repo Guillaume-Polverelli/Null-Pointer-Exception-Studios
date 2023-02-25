@@ -221,6 +221,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &294775825 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5156187887936275470, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
+  m_PrefabInstance: {fileID: 5156187887641618433}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1402828319
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,6 +270,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1607349757 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4910027095755656885, guid: 2d9545d4ebcf74043b7bdf203fac6944, type: 3}
+  m_PrefabInstance: {fileID: 1976335124617283475}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1607349764
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607349757}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &1929195434
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,6 +490,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1976335125490634353, guid: 2d9545d4ebcf74043b7bdf203fac6944, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 294775825}
     - target: {fileID: 1976335125490634353, guid: 2d9545d4ebcf74043b7bdf203fac6944, type: 3}
       propertyPath: dialogue.name
       value: Jacquie
