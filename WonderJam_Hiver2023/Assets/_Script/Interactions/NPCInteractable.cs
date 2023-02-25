@@ -9,6 +9,7 @@ public class NPCInteractable : MonoBehaviour
 
     [SerializeField] private ChatBubble chatBubble;
     [SerializeField] private GameObject Player;
+    [SerializeField] private AudioSource audioSource;
 
     private string textToDisplay;
 
@@ -36,7 +37,7 @@ public class NPCInteractable : MonoBehaviour
             }
             else
             {
-                textToDisplay = FindObjectOfType<DialogueManager>().DisplayNextSentence();
+                textToDisplay = FindObjectOfType<DialogueManager>().DisplayNextSentence(audioSource);
                 chatBubble.NextMessage(textToDisplay);
             }
         }
@@ -44,7 +45,7 @@ public class NPCInteractable : MonoBehaviour
         {
             gameObject.GetComponent<NPC_Behavior>().ChangeIsStopped(true);
             dialogue.setStarted(true);
-            textToDisplay = FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+            textToDisplay = FindObjectOfType<DialogueManager>().StartDialogue(dialogue, audioSource);
             chatBubble.Create(textToDisplay);
         }
     }
