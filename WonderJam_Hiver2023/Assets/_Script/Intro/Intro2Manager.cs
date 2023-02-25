@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class IntroManager : MonoBehaviour
+public class Intro2Manager : MonoBehaviour
 {
     [SerializeField] private GameObject errorLinePrefab;
     [SerializeField] private Transform errorContainer;
@@ -36,10 +37,10 @@ public class IntroManager : MonoBehaviour
         
         Transform[] errorLines = errorContainer.GetComponentsInChildren<Transform>();
 
-        for(int i = 0; i < errorContainer.childCount; i++)
+        /*for(int i = 0; i < errorContainer.childCount; i++)
         {
             errorContainer.GetChild(i).SetSiblingIndex(errorContainer.childCount - i);
-        }
+        }*/
 
 
         GameObject errorToAdd = Instantiate(errorLinePrefab, errorContainer);
@@ -50,7 +51,7 @@ public class IntroManager : MonoBehaviour
 
     public void EndError()
     {
-
+        SceneManager.LoadScene(2);
     }
 
 
@@ -70,6 +71,7 @@ public class IntroManager : MonoBehaviour
             yield return new WaitForSeconds(velocityText);
         }
 
+        yield return new WaitForSeconds(Random.Range(1.5f,3f));
         PrintErrors();
     }
 }

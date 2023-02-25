@@ -542,7 +542,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2054859533}
-  - component: {fileID: 2054859532}
+  - component: {fileID: 2054859534}
   m_Layer: 0
   m_Name: IntroManager
   m_TagString: Untagged
@@ -550,25 +550,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2054859532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2054859531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d26342b410fb1d641aeaf1071a630cc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  errorLinePrefab: {fileID: 8202719501390322, guid: 924eddd8fa7bc1f41ba6906e2b7b8ece, type: 3}
-  errorContainer: {fileID: 456298945}
-  errors:
-  - Petite erreur xD
-  - "Ca marche pas l\xE0 !!!"
-  - "Piti\xE9"
-  velocityText: 0.05
 --- !u!4 &2054859533
 Transform:
   m_ObjectHideFlags: 0
@@ -584,3 +565,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2054859534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054859531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d26342b410fb1d641aeaf1071a630cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  errorLinePrefab: {fileID: 8202719501390322, guid: 924eddd8fa7bc1f41ba6906e2b7b8ece, type: 3}
+  errorContainer: {fileID: 456298945}
+  errors:
+  - 'Error CS1004 : NullReferenceException: Object reference not set to an instance
+    of an object'
+  - 'at Game.Start () [0x0000b] in /Unity/projects/Game/Assets/MainCharacter.cs:10 '
+  - Trying to solve errors...
+  - ...
+  - ..
+  - ...
+  - Reloading game assets
+  - New asset found at location /Unity/projects/Game/???/?il?D??o?.a??et
+  - Resuming game
+  velocityText: 0.05
