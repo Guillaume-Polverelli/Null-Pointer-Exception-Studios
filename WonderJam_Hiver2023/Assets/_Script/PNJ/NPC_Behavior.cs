@@ -81,4 +81,9 @@ public class NPC_Behavior : MonoBehaviour
 
         return false;
     }
+
+    public void ChangeIsStopped(bool bIsStopped)
+    {
+        _navMeshAgent.isStopped = bIsStopped;
+    }
 }
