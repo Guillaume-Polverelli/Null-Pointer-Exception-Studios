@@ -21,7 +21,7 @@ public class PlayerInteract : MonoBehaviour
             {
                 if(collider.TryGetComponent(out NPCInteractable npcInteractable))
                 {
-                    //GetComponent<PlayerMovement>().SetActive(false);
+                    GetComponent<PlayerMovement>().setStopped(true);
                     npcInteractable.Interact();
                 }
             }
