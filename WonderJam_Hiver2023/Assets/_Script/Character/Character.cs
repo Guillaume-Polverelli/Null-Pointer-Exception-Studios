@@ -23,7 +23,6 @@ public class Character : MonoBehaviour
 
     public void Update()
     {
-        print(HP);
         progressBarHP.GetComponent<Image>().fillAmount =  (HP / maxHP);
         progressBarXP.GetComponent<Image>().fillAmount =  (XP / maxXP);
 
