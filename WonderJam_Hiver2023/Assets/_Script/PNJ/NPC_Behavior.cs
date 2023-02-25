@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class NPC_Behavior : MonoBehaviour
 {
-
+    public Transform Player;
     public LayerMask groundLayer, playerLayer;
 
     public Vector3 destination;
@@ -13,6 +13,15 @@ public class NPC_Behavior : MonoBehaviour
     public float destinationDistance;
 
     private NavMeshAgent _navMeshAgent;
+
+    private bool bHasAttacked;
+
+    [SerializeField] private float attackCooldown = 1.0f;
+    [SerializeField] private float sightRange = 30.0f;
+    [SerializeField] private float attackRange = 20.0f;
+
+    private bool bPlayerInSight;
+    private bool bPlayerInAttackRange;
 
     // Start is called before the first frame update
     void Start()
@@ -29,10 +38,16 @@ public class NPC_Behavior : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (IsPathComplete())
+        if (IsPathComplete() && !bPlayerInSight && !bPlayerInAttackRange)
         {
             StartCoroutine(PatrouilleDelai());
         }
+
+        bPlayerInSight = Physics.CheckSphere(transform.position, sightRange, playerLayer);
+        bPlayerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerLayer);
+
+        if (bPlayerInSight && !bPlayerInAttackRange) ChasePlayer();
+        if (bPlayerInAttackRange && bPlayerInSight) AttackPlayer();
     }
 
     private IEnumerator PatrouilleDelai()
@@ -85,5 +100,28 @@ public class NPC_Behavior : MonoBehaviour
     public void ChangeIsStopped(bool bIsStopped)
     {
         _navMeshAgent.isStopped = bIsStopped;
+    }
+
+    public void ChasePlayer()
+    {
+        _navMeshAgent.SetDestination(Player.position);
+    }
+
+    public void AttackPlayer()
+    {
+        _navMeshAgent.SetDestination(transform.position);
+        transform.LookAt(Player);
+
+        if (!bHasAttacked)
+        {
+            print("Attaque !!!");
+            bHasAttacked = true;
+            Invoke(nameof(ResetAttack), attackCooldown);
+        }
+    }
+
+    public void ResetAttack()
+    {
+        bHasAttacked = false;
     }
 }
