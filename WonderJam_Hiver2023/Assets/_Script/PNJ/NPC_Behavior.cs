@@ -16,6 +16,8 @@ public class NPC_Behavior : MonoBehaviour
 
     private bool bHasAttacked;
 
+    private Animator _animator;
+
     [SerializeField] private float attackCooldown = 1.0f;
     [SerializeField] private float sightRange = 30.0f;
     [SerializeField] private float attackRange = 20.0f;
@@ -26,6 +28,7 @@ public class NPC_Behavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _animator = GetComponent<Animator>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
         Patrouille();
     }
@@ -33,7 +36,7 @@ public class NPC_Behavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        _animator.SetFloat("Velocity", 100.0f);
     }
 
     private void FixedUpdate()
