@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    [SerializeField] private GameObject locker_Quest1;
+
     public void Awake()
     {
         if (Instance != null)
@@ -18,9 +20,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void TestQuest(string NPC_name)
+    {
+        switch (NPC_name)
+        {
+            case ("Jacquie"):
+                UnlockQuest_1();
+                break;
+            default:
+                break;
+        }
+    }
+
     public void UnlockQuest_1()
     {
-
+        locker_Quest1.SetActive(false);
     }
 
     public void UnlockQuest_2()
