@@ -27,10 +27,31 @@ public class NPC_Behavior : MonoBehaviour
         
     }
 
+    private void FixedUpdate()
+    {
+        if (IsPathComplete())
+        {
+            StartCoroutine(PatrouilleDelai());
+        }
+    }
+
+    private IEnumerator PatrouilleDelai()
+    {
+        int delai = Random.Range(0, 10);
+
+        yield return new WaitForSeconds(delai);
+
+        Patrouille();
+    }
+
     private void Patrouille()
     {
-        if (!bHasDestination) FindDestinatiion();
+        if (_navMeshAgent.hasPath) FindDestinatiion();
+
+        _navMeshAgent.SetDestination(FindDestinatiion());
+
         
+
     }
 
     private Vector3 FindDestinatiion()
@@ -47,4 +68,17 @@ public class NPC_Behavior : MonoBehaviour
         return finalDestination;
     }
 
+    private bool IsPathComplete()
+    {
+        if(_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
+        {
+            if(_navMeshAgent.hasPath || _navMeshAgent.velocity.sqrMagnitude == 0.0f)
+            {
+                return true;
+            }
+        
+        }
+
+        return false;
+    }
 }
