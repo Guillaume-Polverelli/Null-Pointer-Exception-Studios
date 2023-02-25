@@ -28,6 +28,8 @@ public class Tonmou_Behavior : MonoBehaviour
     private bool bPlayerInSight;
     private bool bPlayerInAttackRange;
 
+    private bool bIsDead;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,8 @@ public class Tonmou_Behavior : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (bIsDead) return;
+
         if (IsPathComplete() && !bPlayerInSight && !bPlayerInAttackRange)
         {
             StartCoroutine(PatrouilleDelai());

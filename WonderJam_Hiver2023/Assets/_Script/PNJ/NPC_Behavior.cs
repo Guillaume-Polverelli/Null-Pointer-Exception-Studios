@@ -28,6 +28,8 @@ public class NPC_Behavior : MonoBehaviour
     private bool bPlayerInSight;
     private bool bPlayerInAttackRange;
 
+    private bool bIsDead;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,11 +41,14 @@ public class NPC_Behavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (bIsDead) return;
         _animator.SetFloat("Velocity", _navMeshAgent.velocity.magnitude);
     }
 
     private void FixedUpdate()
     {
+        if (bIsDead) return;
+
         if (IsPathComplete() && !bPlayerInSight && !bPlayerInAttackRange)
         {
             StartCoroutine(PatrouilleDelai());
