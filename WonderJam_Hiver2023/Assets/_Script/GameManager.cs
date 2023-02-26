@@ -7,9 +7,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    [SerializeField] private GameObject player;
+
     [SerializeField] private GameObject locker_Quest0;
     [SerializeField] private GameObject locker_Quest1;
-    [SerializeField] private GameObject locker_Quest6;
+    [SerializeField] private GameObject locker_Quest3;
 
     [SerializeField] private TextMeshProUGUI titleQuest;
     [SerializeField] private TextMeshProUGUI objectifQuest;
@@ -19,6 +21,11 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Tomato tomatoQuest;
     [SerializeField] private Parchemin parcheminQuest;
+
+    [SerializeField] private Transform parcheminParent;
+    [SerializeField] private GameObject parcheminPrefab;
+
+    [SerializeField] private Transform[] spawnPointsHero;
 
     private NPCInteractable NPCToTalkTo;
     private int tomatoCollected = 0;
@@ -62,12 +69,16 @@ public class GameManager : MonoBehaviour
                 break;
             case ("Rencontre1"):
                 EndQuest_1();
+                UnlockQuest_2();
                 break;
-            case ("Quest2"):
-                if (!isQuestActive)
-                {
-                    UnlockQuest_2();
-                }
+            case ("Combat1"):
+                listOfNPC[0].GetComponent<NPC_Behavior>().SetAttackRange(2);
+                break;
+            case ("Quest3"):
+                UnlockQuest_3();
+                break;
+            case ("Combat2"):
+                listOfNPC[1].GetComponent<NPC_Behavior>().SetAttackRange(2);
                 break;
             default:
                 break;
@@ -84,10 +95,13 @@ public class GameManager : MonoBehaviour
                 if (tomatoCollected == 15)
                 {
                     tomatoQuest.IncreaseDialogLine();
+                    tomatoQuest.ChangeColorIcon(new Vector3(0, 200, 0));
                 }
                 break;
             case 1:
                 parchmentCollected = true;
+                GameObject parchemin = Instantiate(parcheminPrefab, parcheminParent);
+                parchemin.GetComponentInChildren<ParcheminErrorText>().setPlayer(player);
                 break;
             case 2:
                 swordCollected = true;
@@ -128,6 +142,7 @@ public class GameManager : MonoBehaviour
         objectifQuest.SetText("Vous avez entendu parlé d'un petit village perdu dans la forêt. Des rumeurs racontent que le mage ayant découvert la prophétie s'y trouve...");
         progressionQuest.SetText("Trouvez le moyen de vous rendre au village.");
         ShowQuest();
+        NPCToTalkTo = listOfNPC[3];
     }
 
     public void UnlockQuest_1()
@@ -139,19 +154,24 @@ public class GameManager : MonoBehaviour
         setTextQuest("Total de tomates ramassées: " + tomatoCollected + "/15");
         ShowQuest();
         tomatoQuest.IncreaseDialogLine();
-
+        tomatoQuest.ChangeColorIcon(new Vector3(206, 206, 206));
     }
 
     public void UnlockQuest_2()
     {
         isQuestActive = true;
-        //listOfNPC[1].gameObject.SetActive(true);
+        NPCToTalkTo = listOfNPC[0];
+        listOfNPC[0].gameObject.SetActive(true);
     }
 
     public void UnlockQuest_3()
     {
         isQuestActive = true;
-
+        locker_Quest3.SetActive(false);
+        titleQuest.SetText("Par tous les chemins...");
+        objectifQuest.SetText("Benoît, le prêtre du village, vous indique qu'il était en possession d'un parchemin parlant de la prophétie. Cependant, celui-ci se trouverait dans un donjon éloigné.");
+        setTextQuest("Parchemin collecté " + parcheminQuest + "/1");
+        ShowQuest();
     }
 
     public void UnlockQuest_4()
@@ -176,6 +196,7 @@ public class GameManager : MonoBehaviour
         titleQuest.SetText("Quest cleared !");
         titleQuest.gameObject.SetActive(true);
         Invoke("HideQuest", 4.0f);
+        tomatoQuest.setVisibilityIcon(true);
     }
 
     public void EndQuest_1()
@@ -185,14 +206,13 @@ public class GameManager : MonoBehaviour
         titleQuest.SetText("Quest cleared !");
         titleQuest.gameObject.SetActive(true);
         Invoke("HideQuest", 4.0f);
-        //NPCToTalkTo = listOfNPC[1];
-        //UnlockQuest_2();
+        tomatoQuest.setVisibilityIcon(false);
     }
 
     public void EndQuest_2()
     {
         isQuestActive = false;
-        //NPCToTalkTo = listOfNPC[2];
+        NPCToTalkTo = listOfNPC[4];
     }
 
     public void EndQuest_3()
@@ -214,5 +234,16 @@ public class GameManager : MonoBehaviour
     public void EndQuest_6()
     {
         isQuestActive = false;
+    }
+
+    public void UnlockRencontre2()
+    {
+        listOfNPC[1].gameObject.SetActive(true);
+        listOfNPC[1].gameObject.GetComponent<NPC_Behavior>().ChangeIsStopped(true);
+    }
+
+    public void EndRencontre_2()
+    {
+       
     }
 }

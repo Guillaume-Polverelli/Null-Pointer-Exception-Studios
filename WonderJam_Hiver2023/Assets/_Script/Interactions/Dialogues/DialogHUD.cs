@@ -6,12 +6,12 @@ using TMPro;
 public class DialogHUD : MonoBehaviour
 {
 
-    private TextMeshPro textMeshPro;
+    private TMP_Text textMeshPro;
     [SerializeField] private float velocityTest;
 
     public void Awake()
     {
-        textMeshPro = transform.GetChild(3).GetComponent<TextMeshPro>();
+        textMeshPro = transform.GetChild(3).GetComponent<TMP_Text>();
     }
 
     public IEnumerator Writer(string text)
@@ -33,11 +33,11 @@ public class DialogHUD : MonoBehaviour
 
     public void SetTextActive(bool value)
     {
-        transform.GetChild(3).GetComponent<TextMeshPro>().enabled = value;
+        transform.GetChild(3).gameObject.SetActive(value);
     }
 
     public bool GetTextIsActive()
     {
-        return transform.GetChild(3).GetComponent<TextMeshPro>().IsActive();
+        return transform.GetChild(3).GetComponent<TMP_Text>().IsActive();
     }
 }

@@ -30,12 +30,16 @@ public class NPC_Behavior : MonoBehaviour
 
     private bool bIsDead;
 
+    public void Awake()
+    {
+        _animator = GetComponent<Animator>();
+        _navMeshAgent = GetComponent<NavMeshAgent>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        _animator = GetComponent<Animator>();
-        _navMeshAgent = GetComponent<NavMeshAgent>();
+       
         Patrouille();
     }
 
@@ -113,6 +117,10 @@ public class NPC_Behavior : MonoBehaviour
 
     public void ChangeIsStopped(bool bIsStopped)
     {
+        if(_navMeshAgent == null)
+        {
+            print("vbhbbsdhb");
+        }
         _navMeshAgent.isStopped = bIsStopped;
     }
 
@@ -138,5 +146,15 @@ public class NPC_Behavior : MonoBehaviour
     public void ResetAttack()
     {
         bHasAttacked = false;
+    }
+
+    public void SetSightRange(float sightRange)
+    {
+        this.sightRange = sightRange;
+    }
+
+    public void SetAttackRange(float attackRange)
+    {
+        this.attackRange = attackRange;
     }
 }

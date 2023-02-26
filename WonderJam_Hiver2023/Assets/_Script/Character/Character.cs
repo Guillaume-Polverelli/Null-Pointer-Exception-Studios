@@ -25,6 +25,7 @@ public class Character : MonoBehaviour
 
     public void Update()
     {
+        if (progressBarHP == null || progressBarXP == null) return;
         progressBarHP.GetComponent<Image>().fillAmount =  (HP / maxHP);
         progressBarXP.GetComponent<Image>().fillAmount =  (XP / maxXP);
 
@@ -83,5 +84,10 @@ public class Character : MonoBehaviour
             GameManager.Instance.TriggerLocker_0();
             level.SetText("Lvl 000");
         }
+    }
+
+    public float getHP()
+    {
+        return HP;
     }
 }

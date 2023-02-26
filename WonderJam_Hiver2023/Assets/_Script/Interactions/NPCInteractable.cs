@@ -38,6 +38,7 @@ public class NPCInteractable : MonoBehaviour
                 gameObject.GetComponent<NPC_Behavior>().ChangeIsStopped(false);
                 Player.GetComponent<PlayerMovement>().setStopped(false);
                 chatBubble.DestroyChatBubble();
+                textToHUD.SetTextActive(false);
                 dialogue[nbDialogueToRead].setStarted(false);
                 GameManager.Instance.TestQuest(dialogue[nbDialogueToRead].quest);
             }
