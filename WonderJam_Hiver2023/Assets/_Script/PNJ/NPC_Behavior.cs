@@ -18,6 +18,7 @@ public class NPC_Behavior : MonoBehaviour
 
     private Animator _animator;
 
+    [SerializeField] private float damages;
     [SerializeField] private float attackCooldown = 1.0f;
     [SerializeField] private float sightRange = 30.0f;
     [SerializeField] private float attackRange = 20.0f;
@@ -140,6 +141,7 @@ public class NPC_Behavior : MonoBehaviour
             _animator.SetTrigger("Attack");
             bHasAttacked = true;
             Invoke(nameof(ResetAttack), attackCooldown);
+            Player.GetComponent<Character>().TakeDamage(damages);
         }
     }
 
@@ -160,6 +162,7 @@ public class NPC_Behavior : MonoBehaviour
 
     public void Die()
     {
-
+        _animator.SetTrigger("Die");
+        bIsDead = true;
     }
 }

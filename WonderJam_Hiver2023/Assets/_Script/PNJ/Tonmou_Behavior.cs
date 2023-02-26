@@ -18,6 +18,8 @@ public class Tonmou_Behavior : MonoBehaviour
 
     private Animator _animator;
 
+
+    [SerializeField] private float damages;
     [SerializeField] private float attackCooldown = 1.0f;
     [SerializeField] private float sightRange = 30.0f;
     [SerializeField] private float attackRange = 20.0f;
@@ -136,6 +138,7 @@ public class Tonmou_Behavior : MonoBehaviour
             _animator.SetTrigger("Stab Attack");
             bHasAttacked = true;
             Invoke(nameof(ResetAttack), attackCooldown);
+            Player.GetComponent<Character>().TakeDamage(damages);
         }
     }
 

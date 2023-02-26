@@ -223,7 +223,11 @@ MonoBehaviour:
   centerOverlap: 0
   damagePower: 0
   swordAudioSource: {fileID: 4836549736753022327}
+  swingClip: {fileID: 8300000, guid: e876c08971b36854b9d7fc473b9e4d89, type: 3}
+  swordHitClip: {fileID: 8300000, guid: dca624afff507c94486ff871794434cd, type: 3}
   swordAnim: {fileID: 8245772488745612741}
+  attackCD: 0
+  timeElapsed: 0
 --- !u!114 &3289740645428287563
 MonoBehaviour:
   m_ObjectHideFlags: 0

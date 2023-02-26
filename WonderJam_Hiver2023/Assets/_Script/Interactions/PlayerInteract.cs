@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
@@ -7,11 +8,17 @@ public class PlayerInteract : MonoBehaviour
 
     [SerializeField] private float centerOverlap;
     [SerializeField] private float damagePower;
-
+    
 
     [SerializeField] private AudioSource swordAudioSource;
-  
+    [SerializeField] private AudioClip swingClip;
+    [SerializeField] private AudioClip swordHitClip;
+
     [SerializeField] Animation swordAnim;
+
+    [SerializeField] private float attackCD;
+    [SerializeField] private float timeElapsed;
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +32,7 @@ public class PlayerInteract : MonoBehaviour
         TalkToNPC();
         SwordAttack();
         
+        timeElapsed += Time.deltaTime;
     }
 
     public void TalkToNPC()
@@ -56,10 +64,11 @@ public class PlayerInteract : MonoBehaviour
 
     public void SwordAttack()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && timeElapsed >= attackCD)
         {
+            timeElapsed = 0f;
+
             swordAnim.Play();
-            swordAudioSource.Play();
 
             var playerPos = transform.position;
             var playerDirection = transform.forward;
@@ -68,6 +77,7 @@ public class PlayerInteract : MonoBehaviour
             //Use the OverlapBox to detect if there are any other colliders within this box area.
             //Use the GameObject's centre, half the size (as a radius) and rotation. This creates an invisible box around your GameObject.
             var hitColliders = Physics.OverlapBox(playerPos + centerOverlap * playerDirection, transform.localScale / 2, playerRotation);
+            bool hasHit = false;
             foreach (var collider in hitColliders)
             {
                 //Debug.Log(collider);
@@ -78,11 +88,21 @@ public class PlayerInteract : MonoBehaviour
                     bool isDead = false;
                     Debug.Log("Sword attack");
                     isDead = character.TakeDamage(damagePower);
+                    swordAudioSource.clip = swordHitClip;
+                    swordAudioSource.Play();
+                    hasHit = true;
+
                     if (isDead)
                     {
                         gameObject.GetComponent<Character>().AddXP();
                     }
                 }
+            }
+
+            if (!hasHit)
+            {
+                swordAudioSource.clip = swingClip;
+                swordAudioSource.Play();
             }
         }
     }
