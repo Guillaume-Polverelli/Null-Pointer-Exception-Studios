@@ -10,8 +10,6 @@ public class SceneFinale : MonoBehaviour
     [SerializeField] private NPCInteractable hero;
     [SerializeField] private Character player;
     [SerializeField] private GameObject chatMessage;
-    [SerializeField] private GameObject playerCamera;
-    [SerializeField] private GameObject heroCamera;
     public void Init()
     {
         player.setHealth(100f, 0f);
@@ -34,8 +32,6 @@ public class SceneFinale : MonoBehaviour
 
     public void FinishTheGame()
     {
-        playerCamera.SetActive(false);
-        heroCamera.SetActive(true);
         Invoke("LoadEndLevel", 3.0f);
     }
 
