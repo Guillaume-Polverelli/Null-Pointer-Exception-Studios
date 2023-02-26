@@ -162,7 +162,6 @@ public class NPC_Behavior : MonoBehaviour
 
     public void Die()
     {
-        _animator.SetTrigger("Die");
-        bIsDead = true;
+
     }
 }
