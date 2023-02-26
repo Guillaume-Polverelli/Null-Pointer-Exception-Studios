@@ -19,21 +19,7 @@ public class PlayerInteract : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            float interactRange = 2f;
-            Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
-            foreach (Collider collider in colliderArray)
-            {
-
-                if (collider.TryGetComponent(out NPCInteractable npcInteractable))
-                {
-                    print("E is clicked");
-                    GetComponent<PlayerMovement>().setStopped(true);
-                    npcInteractable.Interact();
-                }
-            }
-        }
+        TalkToNPC();
         SwordAttack();
         
     }
@@ -74,8 +60,13 @@ public class PlayerInteract : MonoBehaviour
                 //Debug.Log(collider);
                 if (collider.TryGetComponent(out Character character))
                 {
+                    bool isDead = false;
                     Debug.Log("Sword attack");
-                    character.TakeDamage(damagePower);
+                    isDead = character.TakeDamage(damagePower);
+                    if (isDead)
+                    {
+                        gameObject.GetComponent<Character>().AddXP();
+                    }
                 }
             }
         }

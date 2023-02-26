@@ -46,13 +46,15 @@ public class Character : MonoBehaviour
     }
 
 
-    public void TakeDamage(float damage)
+    public bool TakeDamage(float damage)
     {
         HP -= damage;
         if(HP <= 0f)
         {
             Die();
+            return true;
         }
+        return false;
     }
 
     public void Regen(int value)
@@ -68,5 +70,14 @@ public class Character : MonoBehaviour
     {
         gameObject.SetActive(false);
         //Destroy(gameObject);
+    }
+
+    public void AddXP()
+    {
+        XP += 1f;
+        if(XP >= maxXP)
+        {
+            XP = 0;
+        }
     }
 }

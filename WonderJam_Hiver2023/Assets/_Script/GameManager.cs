@@ -33,6 +33,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Start()
+    {
+        UnlockQuest_0();
+    }
+
     public void TestQuest(string NPC_name)
     {
         switch (NPC_name)
@@ -50,6 +55,14 @@ public class GameManager : MonoBehaviour
         titleQuest.gameObject.SetActive(true);
         objectifQuest.gameObject.SetActive(true);
         progressionQuest.gameObject.SetActive(true);
+    }
+
+    public void UnlockQuest_0()
+    {
+        titleQuest.SetText("Le début d'une nouvelle aventure !");
+        objectifQuest.SetText("Vous avez entendu parlé d'un petit village perdu dans la forêt. Des rumeurs racontent que le mage ayant découvert la prophétie s'y trouve...");
+        progressionQuest.SetText("Trouvez le moyen de vous rendre au village.");
+        ShowQuest();
     }
 
     public void UnlockQuest_1()
