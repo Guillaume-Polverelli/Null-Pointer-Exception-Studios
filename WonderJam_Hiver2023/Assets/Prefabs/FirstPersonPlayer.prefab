@@ -88,6 +88,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c42fa913e201624e9984067227044ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  centerOverlap: 0
+  damagePower: 0
+  swordAnim: {fileID: 8245772488745612741}
 --- !u!114 &3289740645428287563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,3 +447,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7044476285236031898, guid: aee29ca4814728040bdb4976c5135b43, type: 3}
   m_PrefabInstance: {fileID: 4762131060621515154}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2926967638245208754 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7676615874565401376, guid: aee29ca4814728040bdb4976c5135b43, type: 3}
+  m_PrefabInstance: {fileID: 4762131060621515154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &8245772488745612741
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2926967638245208754}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: ff0cce6e536ee584faa5fa9ccb105b7c, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: ff0cce6e536ee584faa5fa9ccb105b7c, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

@@ -6,7 +6,10 @@ public class PlayerInteract : MonoBehaviour
 {
 
     [SerializeField] private float centerOverlap;
-    [SerializeField] private float damagePower; 
+    [SerializeField] private float damagePower;
+
+    [SerializeField] Animation swordAnim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +61,7 @@ public class PlayerInteract : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            swordAnim.Play();
             var playerPos = transform.position;
             var playerDirection = transform.forward;
             var playerRotation = transform.rotation;
