@@ -14,6 +14,7 @@ public class Character : MonoBehaviour
     [SerializeField] private int regenValue;
     [SerializeField] private float regenCooldown;
     [SerializeField] private TMP_Text level;
+    [SerializeField] private SceneFinale finalScene;
 
 
     private float HP;
@@ -82,7 +83,7 @@ public class Character : MonoBehaviour
         }
         else
         {
-
+            finalScene.Init();
 
 
 
