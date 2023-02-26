@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject locker_Quest0;
     [SerializeField] private GameObject locker_Quest1;
     [SerializeField] private GameObject locker_Quest3;
+    [SerializeField] private GameObject locker_Quest4;
 
     [SerializeField] private TextMeshProUGUI titleQuest;
     [SerializeField] private TextMeshProUGUI objectifQuest;
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Tomato tomatoQuest;
     [SerializeField] private Parchemin parcheminQuest;
+    [SerializeField] private Epee swordQuest;
 
     [SerializeField] private Transform parcheminParent;
     [SerializeField] private GameObject parcheminPrefab;
@@ -80,6 +82,10 @@ public class GameManager : MonoBehaviour
             case ("Combat2"):
                 listOfNPC[1].GetComponent<NPC_Behavior>().SetAttackRange(2);
                 break;
+            case ("Quest4"):
+                EndQuest_3();
+                UnlockQuest_4();
+                break;
             default:
                 break;
         }
@@ -105,6 +111,7 @@ public class GameManager : MonoBehaviour
                 break;
             case 2:
                 swordCollected = true;
+                UnlockRencontre3();
                 break;
 
         }
@@ -154,7 +161,7 @@ public class GameManager : MonoBehaviour
         setTextQuest("Total de tomates ramassées: " + tomatoCollected + "/15");
         ShowQuest();
         tomatoQuest.IncreaseDialogLine();
-        tomatoQuest.ChangeColorIcon(new Vector3(206, 206, 206));
+        tomatoQuest.ChangeColorIcon(new Vector3(50, 50, 50));
     }
 
     public void UnlockQuest_2()
@@ -170,13 +177,21 @@ public class GameManager : MonoBehaviour
         locker_Quest3.SetActive(false);
         titleQuest.SetText("Par tous les chemins...");
         objectifQuest.SetText("Benoît, le prêtre du village, vous indique qu'il était en possession d'un parchemin parlant de la prophétie. Cependant, celui-ci se trouverait dans un donjon éloigné.");
-        setTextQuest("Parchemin collecté " + parcheminQuest + "/1");
+        setTextQuest("Parchemin collecté : 0/1");
         ShowQuest();
+        parcheminQuest.IncreaseDialogLine();
+        parcheminQuest.ChangeColorIcon(new Vector3(50, 50, 50));
     }
 
     public void UnlockQuest_4()
     {
         isQuestActive = true;
+        locker_Quest4.SetActive(false);
+        titleQuest.SetText("Réunion au sommet");
+        objectifQuest.SetText("Grâce au prêtre, vous avez pu en apprendre plus sur la prophétie. Tout semble converger vers une mystérieuse épée. Cela ne vous laisse pas indifférent et vous décidez de partir à sa recherche.");
+        setTextQuest("Epée démoniaque collectée : 0/1");
+        ShowQuest();
+        //swordQuest.IncreaseDialogLine();
     }
 
     public void UnlockQuest_5()
@@ -202,6 +217,7 @@ public class GameManager : MonoBehaviour
     public void EndQuest_1()
     {
         isQuestActive = false;
+        NPCToTalkTo = listOfNPC[4];
         HideQuest();
         titleQuest.SetText("Quest cleared !");
         titleQuest.gameObject.SetActive(true);
@@ -213,12 +229,19 @@ public class GameManager : MonoBehaviour
     {
         isQuestActive = false;
         NPCToTalkTo = listOfNPC[4];
+        parcheminQuest.setVisibilityIcon(true);
     }
 
     public void EndQuest_3()
     {
         isQuestActive = false;
-        //NPCToTalkTo = listOfNPC[3];
+        NPCToTalkTo = listOfNPC[2];
+        HideQuest();
+        titleQuest.SetText("Quest cleared !");
+        titleQuest.gameObject.SetActive(true);
+        Invoke("HideQuest", 4.0f);
+        parcheminQuest.setVisibilityIcon(false);
+       
     }
 
     public void EndQuest_4()
@@ -238,12 +261,24 @@ public class GameManager : MonoBehaviour
 
     public void UnlockRencontre2()
     {
+        NPCToTalkTo = listOfNPC[1];
+        parcheminQuest.IncreaseDialogLine();
+
+        setTextQuest("Parchemin collecté : 1/1");
+        ShowQuest();
+
         listOfNPC[1].gameObject.SetActive(true);
         listOfNPC[1].gameObject.GetComponent<NPC_Behavior>().ChangeIsStopped(true);
     }
 
     public void EndRencontre_2()
     {
-       
+        NPCToTalkTo = listOfNPC[4];
+    }
+
+    public void UnlockRencontre3()
+    {
+        listOfNPC[2].gameObject.SetActive(true);
+        listOfNPC[2].gameObject.GetComponent<NPC_Behavior>().ChangeIsStopped(true);
     }
 }

@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Epee : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private NPCInteractable swordQuest;
+    public void Awake()
     {
-        
+        swordQuest = gameObject.GetComponent<NPCInteractable>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void IncreaseDialogLine()
     {
-        
+        swordQuest.SetNbDialog(swordQuest.GetNbDialog() + 1);
     }
 }
