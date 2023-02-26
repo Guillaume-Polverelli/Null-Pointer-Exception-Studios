@@ -96,10 +96,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3
-  m_Height: 1.8
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Radius: 0.7
+  m_Height: 2.5
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!195 &-358822988753377810
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -237,6 +237,7 @@ MonoBehaviour:
   progressBarXP: {fileID: 1988387169890849192}
   regenValue: 0
   regenCooldown: 0
+  level: {fileID: 0}
 --- !u!1001 &1350642705774149134
 PrefabInstance:
   m_ObjectHideFlags: 0

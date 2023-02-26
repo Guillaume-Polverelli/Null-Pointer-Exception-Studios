@@ -37,6 +37,7 @@ public class NPCInteractable : MonoBehaviour
                 chatBubble.DestroyChatBubble();
                 Player.GetComponent<PlayerMovement>().setStopped(false);
                 dialogue[nbDialogueToRead].setStarted(false);
+                GameManager.Instance.TestQuest(dialogue[nbDialogueToRead].quest);
             }
             else
             {
@@ -44,7 +45,10 @@ public class NPCInteractable : MonoBehaviour
                 chatBubble.NextMessage(textToDisplay);
                 if (FindObjectOfType<DialogueManager>().isFinished())
                 {
-                    GameManager.Instance.TestQuest(dialogue[nbDialogueToRead].quest);
+                    
+                    /*Player.GetComponent<PlayerMovement>().setStopped(false);
+                    dialogue[nbDialogueToRead].setStarted(false);
+                    Invoke("DestroyChatBubble", 4.0f);*/
                 }
             }
         }
@@ -65,5 +69,11 @@ public class NPCInteractable : MonoBehaviour
     public int GetNbDialog()
     {
         return nbDialogueToRead;
+    }
+
+    public void DestroyChatBubble()
+    {
+        chatBubble.DestroyChatBubble();
+        gameObject.GetComponent<NPC_Behavior>().ChangeIsStopped(false);
     }
 }

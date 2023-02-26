@@ -68,6 +68,8 @@ public class PlayerInteract : MonoBehaviour
                 //Debug.Log(collider);
                 if (collider.TryGetComponent(out Character character))
                 {
+                    if (character.transform.root == transform) break;
+                    
                     bool isDead = false;
                     Debug.Log("Sword attack");
                     isDead = character.TakeDamage(damagePower);

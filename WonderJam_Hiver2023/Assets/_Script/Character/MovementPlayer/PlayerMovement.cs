@@ -48,13 +48,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void setStopped(bool condition)
-    {
-        isStopped = condition;
-    }
+    
 
-    public bool getStopped()
-    {
-        return isStopped;
-    }
+    public void setStopped(bool condition)
+        {
+            isStopped = condition;
+        }
+
+        public bool getStopped()
+        {
+            return isStopped;
+        }
 }
+

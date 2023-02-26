@@ -9,5 +9,6 @@ public class ObjectInteractable : MonoBehaviour
     public void Interact()
     {
         GameManager.Instance.AddObject(objectId);
+        Destroy(gameObject);
     }
 }

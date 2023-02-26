@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [SerializeField] private GameObject locker_Quest0;
-    [SerializeField] private GameObject locker_Quest4;
+    [SerializeField] private GameObject locker_Quest1;
     [SerializeField] private GameObject locker_Quest6;
 
     [SerializeField] private TextMeshProUGUI titleQuest;
@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
     public void Start()
     {
         UnlockQuest_0();
-        NPCToTalkTo = listOfNPC[0];
+        //NPCToTalkTo = listOfNPC[0];
     }
 
     public void TestQuest(string NPC_name)
@@ -59,11 +59,14 @@ public class GameManager : MonoBehaviour
                     UnlockQuest_1();
                 }
                 break;
-            case ("Quest2"):
-                UnlockQuest_2();
-                break;
             case ("Rencontre1"):
-                //Mettre héro en evil
+                EndQuest_1();
+                break;
+            case ("Quest2"):
+                if (!isQuestActive)
+                {
+                    UnlockQuest_2();
+                }
                 break;
             default:
                 break;
@@ -76,7 +79,8 @@ public class GameManager : MonoBehaviour
         {
             case 0:
                 tomatoCollected++;
-                if(tomatoCollected == 15)
+                setTextQuest("Total de tomates ramassées: " + tomatoCollected + " / 15");
+                if (tomatoCollected == 15)
                 {
                     tomatoQuest.IncreaseDialogLine();
                 }
@@ -128,18 +132,19 @@ public class GameManager : MonoBehaviour
     public void UnlockQuest_1()
     {
         isQuestActive = true;
-        locker_Quest0.SetActive(false);
-        titleQuest.SetText("A la cueillette aux champignons !");
-        objectifQuest.SetText("Jacquie vous a commandité pour que vous lui rameniez trois gros champignons de la forêt. Il pourra peut-être alors vous en dire plus sur la prophétie...");
-        setTextQuest("Total de champignons ramassés: " + tomatoCollected + "/3");
+        locker_Quest1.SetActive(false);
+        titleQuest.SetText("Rouge comme une tomate !");
+        objectifQuest.SetText("Jacquie vous a commandité pour que vous lui rameniez quinze grosses tomates des champs du village. Elle pourra peut-être alors vous en dire plus sur la prophétie...");
+        setTextQuest("Total de tomates ramassées: " + tomatoCollected + "/15");
         ShowQuest();
         tomatoQuest.IncreaseDialogLine();
+
     }
 
     public void UnlockQuest_2()
     {
         isQuestActive = true;
-        listOfNPC[1].gameObject.SetActive(true);
+        //listOfNPC[1].gameObject.SetActive(true);
     }
 
     public void UnlockQuest_3()
@@ -175,20 +180,24 @@ public class GameManager : MonoBehaviour
     public void EndQuest_1()
     {
         isQuestActive = false;
-        NPCToTalkTo = listOfNPC[1];
-        UnlockQuest_2();
+        HideQuest();
+        titleQuest.SetText("Quest cleared !");
+        titleQuest.gameObject.SetActive(true);
+        Invoke("HideQuest", 4.0f);
+        //NPCToTalkTo = listOfNPC[1];
+        //UnlockQuest_2();
     }
 
     public void EndQuest_2()
     {
         isQuestActive = false;
-        NPCToTalkTo = listOfNPC[2];
+        //NPCToTalkTo = listOfNPC[2];
     }
 
     public void EndQuest_3()
     {
         isQuestActive = false;
-        NPCToTalkTo = listOfNPC[3];
+        //NPCToTalkTo = listOfNPC[3];
     }
 
     public void EndQuest_4()

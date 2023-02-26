@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 9217653073172348676}
   - component: {fileID: 6404862493187332010}
   - component: {fileID: 6118178214872742250}
+  - component: {fileID: 7981859186682210078}
   m_Layer: 0
   m_Name: NPC_Woman
   m_TagString: Untagged
@@ -92,13 +93,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bbdf7594b400f940b9250b5cd75db8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    name: Jacquie
-    sentences: []
-    audioClips: []
   chatBubble: {fileID: 5585335123828171083}
   Player: {fileID: 0}
   audioSource: {fileID: 6404862493187332010}
+  dialogue:
+  - quest: 
+    sentences: []
+    audioClips: []
+  - quest: 
+    sentences: []
+    audioClips: []
+  - quest: 
+    sentences: []
+    audioClips: []
 --- !u!195 &9217653073172348676
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -243,6 +250,18 @@ MonoBehaviour:
   attackRange: 0
   walkSpeed: 1
   runSpeed: 3
+--- !u!114 &7981859186682210078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3026690087071954998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf654bd399e63e41ae941ab7615bbd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3026690086825415913
 PrefabInstance:
   m_ObjectHideFlags: 0
