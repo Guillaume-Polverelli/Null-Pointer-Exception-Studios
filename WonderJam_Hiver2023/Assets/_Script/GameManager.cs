@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
                 break;
             case ("Quest4"):
                 EndQuest_3();
-                UnlockQuest_4();
+                Invoke("UnlockQuest_4", 5.0f);
                 break;
             case ("Combat3"):
                 listOfNPC[2].GetComponent<NPC_Behavior>().SetAttackRange(1);
