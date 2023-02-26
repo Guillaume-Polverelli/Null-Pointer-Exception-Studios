@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6118178214872742250}
   - component: {fileID: 7981859186682210078}
   m_Layer: 0
-  m_Name: NPC_Woman
+  m_Name: NPC_Woman2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -387,6 +387,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PT_Medieval_Female_Peasant_01_a
       objectReference: {fileID: 0}
+    - target: {fileID: 5936103345416038428, guid: 25b8deb3033e5314a94c9c75eed29dcf, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300004, guid: 7341932378ffac54c870d31e6c0b7f75, type: 3}
+    - target: {fileID: 5936103345416038430, guid: 25b8deb3033e5314a94c9c75eed29dcf, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 344061dde90b2c64ea11647bbeb14678, type: 3}
     - target: {fileID: 5936103345420113630, guid: 25b8deb3033e5314a94c9c75eed29dcf, type: 3}
       propertyPath: m_Enabled
       value: 0

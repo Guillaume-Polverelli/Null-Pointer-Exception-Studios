@@ -30,6 +30,7 @@ public class NPC_Behavior : MonoBehaviour
 
     private bool bIsDead;
 
+
     // Start is called before the first frame update
     void Start()
     {
