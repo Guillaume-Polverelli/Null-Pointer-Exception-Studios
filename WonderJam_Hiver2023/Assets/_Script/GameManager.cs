@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [SerializeField] private GameObject locker_Quest1;
+    [SerializeField] private GameObject locker_Quest0;
     [SerializeField] private GameObject locker_Quest4;
     [SerializeField] private GameObject locker_Quest6;
 
@@ -57,6 +57,18 @@ public class GameManager : MonoBehaviour
         progressionQuest.gameObject.SetActive(true);
     }
 
+    private void HideQuest()
+    {
+        titleQuest.gameObject.SetActive(false);
+        objectifQuest.gameObject.SetActive(false);
+        progressionQuest.gameObject.SetActive(false);
+    }
+
+    public void TriggerLocker_0()
+    {
+        locker_Quest0.SetActive(false);
+    }
+
     public void UnlockQuest_0()
     {
         titleQuest.SetText("Le début d'une nouvelle aventure !");
@@ -67,7 +79,7 @@ public class GameManager : MonoBehaviour
 
     public void UnlockQuest_1()
     {
-        locker_Quest1.SetActive(false);
+        locker_Quest0.SetActive(false);
         titleQuest.SetText("A la cueillette aux champignons !");
         objectifQuest.SetText("Jacquie vous a commandité pour que vous lui rameniez trois gros champignons de la forêt. Il pourra peut-être alors vous en dire plus sur la prophétie...");
         setTextQuest1("Total de champignons ramassés: " + mushroomCollected + "/3");
@@ -102,6 +114,14 @@ public class GameManager : MonoBehaviour
     public void UnlockQuest_6()
     {
 
+    }
+
+    public void EndQuest_0()
+    {
+        HideQuest();
+        titleQuest.SetText("Quest cleared !");
+        titleQuest.gameObject.SetActive(true);
+        Invoke("HideQuest", 4.0f);
     }
 
     public void EndQuest_1()

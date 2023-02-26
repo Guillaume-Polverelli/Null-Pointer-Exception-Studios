@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Character : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Character : MonoBehaviour
     [SerializeField] private GameObject progressBarXP;
     [SerializeField] private int regenValue;
     [SerializeField] private float regenCooldown;
+    [SerializeField] private TMP_Text level;
 
 
     private float HP;
@@ -78,6 +80,8 @@ public class Character : MonoBehaviour
         if(XP >= maxXP)
         {
             XP = 0;
+            GameManager.Instance.TriggerLocker_0();
+            level.SetText("Lvl 000");
         }
     }
 }

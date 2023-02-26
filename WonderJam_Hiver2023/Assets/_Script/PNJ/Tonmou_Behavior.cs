@@ -133,7 +133,6 @@ public class Tonmou_Behavior : MonoBehaviour
 
         if (!bHasAttacked)
         {
-            print("Attaque");
             _animator.SetTrigger("Stab Attack");
             bHasAttacked = true;
             Invoke(nameof(ResetAttack), attackCooldown);
