@@ -4376,13 +4376,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bbdf7594b400f940b9250b5cd75db8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    name: 
-    sentences: []
-    audioClips: []
+  isGivingQuest: 0
   chatBubble: {fileID: 1976335125204279047}
   Player: {fileID: 0}
   audioSource: {fileID: 0}
+  textToHUD: {fileID: 0}
+  dialogue:
+  - quest: 
+    sentences: []
+    audioClips: []
+  - quest: 
+    sentences: []
+    audioClips: []
+  - quest: 
+    sentences: []
+    audioClips: []
 --- !u!114 &9035743785972233135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4404,6 +4412,7 @@ MonoBehaviour:
     m_Bits: 1
   destination: {x: 0, y: 0, z: 0}
   destinationDistance: 10
+  damages: 0
   attackCooldown: 1
   sightRange: 30
   attackRange: 20
