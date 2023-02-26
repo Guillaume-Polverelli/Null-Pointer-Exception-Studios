@@ -44,6 +44,6 @@ public class Intro3Manager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 }

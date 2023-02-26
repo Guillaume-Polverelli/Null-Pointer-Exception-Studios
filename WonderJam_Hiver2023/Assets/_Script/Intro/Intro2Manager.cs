@@ -51,7 +51,7 @@ public class Intro2Manager : MonoBehaviour
 
     public void EndError()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
 

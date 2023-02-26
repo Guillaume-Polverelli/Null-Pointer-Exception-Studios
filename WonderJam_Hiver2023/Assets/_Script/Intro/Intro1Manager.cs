@@ -48,7 +48,7 @@ public class Intro1Manager : MonoBehaviour
         beepSource.Play();
         musicSource.Stop();
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
 }
