@@ -467,6 +467,24 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -11.708, y: 3.154, z: 13.624001}
   m_TimeToStationary: 0.5
+--- !u!1 &151211125 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2847598213578478726, guid: 307d43102cc29fb44918a171bdcbd55e, type: 3}
+  m_PrefabInstance: {fileID: 1160827874}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &151211130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151211125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54cad43a89eed544d8830b7b7879c131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocityTest: 0
 --- !u!1 &163760169
 GameObject:
   m_ObjectHideFlags: 0
@@ -3651,6 +3669,10 @@ PrefabInstance:
       propertyPath: m_HorizontalAlignment
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3090749213615337526, guid: 307d43102cc29fb44918a171bdcbd55e, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 307d43102cc29fb44918a171bdcbd55e, type: 3}
 --- !u!114 &1160827875 stripped
@@ -5156,39 +5178,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3156955694209471641, guid: bc64360e754854241a972c7fa533e96f, type: 3}
       propertyPath: dialogue.Array.data[0].sentences.Array.data[0]
-      value: J'ai faim !
+      value: 0;J'ai faim !
       objectReference: {fileID: 0}
     - target: {fileID: 3156955694209471641, guid: bc64360e754854241a972c7fa533e96f, type: 3}
       propertyPath: dialogue.Array.data[0].sentences.Array.data[1]
-      value: Va me chercher quinze tomates...
+      value: 1;Va me chercher quinze tomates...
       objectReference: {fileID: 0}
     - target: {fileID: 3156955694209471641, guid: bc64360e754854241a972c7fa533e96f, type: 3}
       propertyPath: dialogue.Array.data[0].sentences.Array.data[2]
-      value: "Et que \xE7a saute !"
+      value: "1;Et que \xE7a saute !"
       objectReference: {fileID: 0}
     - target: {fileID: 3156955694209471641, guid: bc64360e754854241a972c7fa533e96f, type: 3}
       propertyPath: dialogue.Array.data[1].sentences.Array.data[0]
-      value: Tu n'as toujours pas mes tomates ?!
+      value: 0;Tu n'as toujours pas mes tomates ?!
       objectReference: {fileID: 0}
     - target: {fileID: 3156955694209471641, guid: bc64360e754854241a972c7fa533e96f, type: 3}
       propertyPath: dialogue.Array.data[1].sentences.Array.data[1]
-      value: Mais qu'est-ce que tu attends ?!
+      value: 0;Mais qu'est-ce que tu attends ?!
       objectReference: {fileID: 0}
     - target: {fileID: 3156955694209471641, guid: bc64360e754854241a972c7fa533e96f, type: 3}
       propertyPath: dialogue.Array.data[2].sentences.Array.data[0]
-      value: "G\xE9nial, le compte est bon !"
+      value: "0;G\xE9nial, le compte est bon !"
       objectReference: {fileID: 0}
     - target: {fileID: 3156955694209471641, guid: bc64360e754854241a972c7fa533e96f, type: 3}
       propertyPath: dialogue.Array.data[2].sentences.Array.data[1]
-      value: "Je vais pouvoir me r\xE9galer maintenant..."
+      value: "1;Je vais pouvoir me r\xE9galer maintenant..."
       objectReference: {fileID: 0}
     - target: {fileID: 3156955694209471641, guid: bc64360e754854241a972c7fa533e96f, type: 3}
       propertyPath: dialogue.Array.data[2].sentences.Array.data[2]
-      value: "Pour ce qui est de la proph\xE9tie..."
+      value: "1;Pour ce qui est de la proph\xE9tie..."
       objectReference: {fileID: 0}
     - target: {fileID: 3156955694209471641, guid: bc64360e754854241a972c7fa533e96f, type: 3}
       propertyPath: dialogue.Array.data[2].sentences.Array.data[3]
-      value: Va voir Michelle, elle saura te guider
+      value: 0;Va voir Michelle, elle saura te guider
       objectReference: {fileID: 0}
     - target: {fileID: 5585335124162357893, guid: bc64360e754854241a972c7fa533e96f, type: 3}
       propertyPath: m_Size.x

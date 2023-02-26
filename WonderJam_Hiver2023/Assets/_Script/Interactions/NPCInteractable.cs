@@ -10,6 +10,8 @@ public class NPCInteractable : MonoBehaviour
     [SerializeField] private GameObject Player;
     [SerializeField] private AudioSource audioSource;
 
+    [SerializeField] private DialogHUD textToHUD;
+
     public Dialogue[] dialogue;
 
     private string textToDisplay;
@@ -34,22 +36,43 @@ public class NPCInteractable : MonoBehaviour
             if (FindObjectOfType<DialogueManager>().isFinished())
             {
                 gameObject.GetComponent<NPC_Behavior>().ChangeIsStopped(false);
-                chatBubble.DestroyChatBubble();
                 Player.GetComponent<PlayerMovement>().setStopped(false);
+                chatBubble.DestroyChatBubble();
                 dialogue[nbDialogueToRead].setStarted(false);
                 GameManager.Instance.TestQuest(dialogue[nbDialogueToRead].quest);
             }
             else
             {
                 textToDisplay = FindObjectOfType<DialogueManager>().DisplayNextSentence(audioSource);
-                chatBubble.NextMessage(textToDisplay);
-                if (FindObjectOfType<DialogueManager>().isFinished())
+                string[] splitArray = textToDisplay.Split(char.Parse(";"));
+                string playerTalking = splitArray[0];
+                textToDisplay = splitArray[1];
+                if(playerTalking == "0")
                 {
-                    
-                    /*Player.GetComponent<PlayerMovement>().setStopped(false);
-                    dialogue[nbDialogueToRead].setStarted(false);
-                    Invoke("DestroyChatBubble", 4.0f);*/
+                    if(textToHUD.GetTextIsActive() == true)
+                    {
+                        StartCoroutine(textToHUD.Writer(textToDisplay));
+                    }
+                    else
+                    {
+                        chatBubble.DestroyChatBubble();
+                        textToHUD.SetTextActive(true);
+                        StartCoroutine(textToHUD.Writer(textToDisplay));
+                    }
                 }
+                else if(playerTalking == "1")
+                {
+                    if(textToHUD.GetTextIsActive() == true)
+                    {
+                        textToHUD.SetTextActive(false);
+                        chatBubble.Create(textToDisplay);
+                    }
+                    else
+                    {
+                        chatBubble.NextMessage(textToDisplay);
+                    }
+                }
+                
             }
         }
         else
@@ -57,7 +80,19 @@ public class NPCInteractable : MonoBehaviour
             gameObject.GetComponent<NPC_Behavior>().ChangeIsStopped(true);
             dialogue[nbDialogueToRead].setStarted(true);
             textToDisplay = FindObjectOfType<DialogueManager>().StartDialogue(dialogue[nbDialogueToRead], audioSource);
-            chatBubble.Create(textToDisplay);
+            string[] splitArray = textToDisplay.Split(char.Parse(";"));
+            string playerTalking = splitArray[0];
+            textToDisplay = splitArray[1];
+            if (playerTalking == "0")
+            {
+                textToHUD.SetTextActive(true);
+                StartCoroutine(textToHUD.Writer(textToDisplay));
+            }
+            else if (playerTalking == "1")
+            {
+                chatBubble.Create(textToDisplay);
+            }
+            
         }
     }
 
@@ -69,11 +104,5 @@ public class NPCInteractable : MonoBehaviour
     public int GetNbDialog()
     {
         return nbDialogueToRead;
-    }
-
-    public void DestroyChatBubble()
-    {
-        chatBubble.DestroyChatBubble();
-        gameObject.GetComponent<NPC_Behavior>().ChangeIsStopped(false);
     }
 }
