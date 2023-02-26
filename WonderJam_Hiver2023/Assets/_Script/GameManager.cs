@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private NPCInteractable[] listOfNPC;
 
     [SerializeField] private Tomato tomatoQuest;
+    [SerializeField] private Parchemin parcheminQuest;
 
     private NPCInteractable NPCToTalkTo;
     private int tomatoCollected = 0;
