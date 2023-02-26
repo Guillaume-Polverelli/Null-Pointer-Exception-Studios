@@ -130,13 +130,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 320642801886728529, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2926967638245208754, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2926967638245208754, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5156187887936275468, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
       propertyPath: m_Name
       value: FirstPersonPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5156187887936275468, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5156187887936275468, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
       propertyPath: m_IsActive
@@ -156,23 +168,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5156187887936275470, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.0279908
+      value: 3.0279906
       objectReference: {fileID: 0}
     - target: {fileID: 5156187887936275470, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.15515982
       objectReference: {fileID: 0}
     - target: {fileID: 5156187887936275470, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5156187887936275470, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.9878894
       objectReference: {fileID: 0}
     - target: {fileID: 5156187887936275470, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5156187887936275470, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -180,11 +192,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5156187887936275470, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -162.148
       objectReference: {fileID: 0}
     - target: {fileID: 5156187887936275470, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5156187887936275473, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
+      propertyPath: footStepsCD
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5156187887936275473, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
+      propertyPath: groundDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5156187887936275473, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
+      propertyPath: footstepsGrass.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5156187887936275473, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
+      propertyPath: footstepsGrass.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 919ddcbcd31b9684baa05726e5c715c0, type: 3}
+    - target: {fileID: 5156187887936275473, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
+      propertyPath: footstepsGrass.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d5f874964476dc40bf43c776d224c41, type: 3}
+    - target: {fileID: 5156187887936275473, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
+      propertyPath: footstepsGrass.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: db530f1ca1db76b4eb89bafcc86f51c1, type: 3}
+    - target: {fileID: 5156187887936275473, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
+      propertyPath: footstepsGrass.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5e59e0a6481f61546baacb4175fe83db, type: 3}
+    - target: {fileID: 5156187887936275473, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
+      propertyPath: footstepsGrass.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 32d97027f2e729447b65c37f6bc379a6, type: 3}
+    - target: {fileID: 5156187887936275473, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
+      propertyPath: footstepsGrass.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: a9f7f973bd174ee469accb9b6fb704ff, type: 3}
+    - target: {fileID: 5156187888210468137, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5156187888275218972, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5156187888680345745, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
