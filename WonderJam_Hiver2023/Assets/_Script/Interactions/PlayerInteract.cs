@@ -28,16 +28,24 @@ public class PlayerInteract : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            float interactRange = 2f;
-            Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
-            foreach (Collider collider in colliderArray)
+            var playerPos = transform.position;
+            var playerDirection = transform.forward;
+            var playerRotation = transform.rotation;
+
+            //Use the OverlapBox to detect if there are any other colliders within this box area.
+            //Use the GameObject's centre, half the size (as a radius) and rotation. This creates an invisible box around your GameObject.
+            var hitColliders = Physics.OverlapBox(playerPos + centerOverlap * playerDirection, transform.localScale / 2, playerRotation);
+            foreach (var collider in hitColliders)
             {
                 print(collider.gameObject.name);
                 if (collider.TryGetComponent(out NPCInteractable npcInteractable))
                 {
-                    print("E is clicked");
                     GetComponent<PlayerMovement>().setStopped(true);
                     npcInteractable.Interact();
+                }
+                else if(collider.TryGetComponent(out ObjectInteractable objectInteractable))
+                {
+                    objectInteractable.Interact();
                 }
             }
         }

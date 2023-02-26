@@ -17,11 +17,11 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private NPCInteractable[] listOfNPC;
 
+    [SerializeField] private Tomato tomatoQuest;
+
     private NPCInteractable NPCToTalkTo;
-    private int mushroomCollected = 0;
-    private int sunflowerCollected = 0;
+    private int tomatoCollected = 0;
     private bool parchmentCollected = false;
-    private bool artefactCollected = false;
     private bool swordCollected = false;
 
     private bool isQuestActive;
@@ -54,7 +54,10 @@ public class GameManager : MonoBehaviour
         switch (NPC_name)
         {
             case ("Quest1"):
-                UnlockQuest_1();
+                if (!isQuestActive)
+                {
+                    UnlockQuest_1();
+                }
                 break;
             case ("Quest2"):
                 UnlockQuest_2();
@@ -64,6 +67,27 @@ public class GameManager : MonoBehaviour
                 break;
             default:
                 break;
+        }
+    }
+
+    public void AddObject(int objectInteractable)
+    {
+        switch (objectInteractable)
+        {
+            case 0:
+                tomatoCollected++;
+                if(tomatoCollected == 15)
+                {
+                    tomatoQuest.IncreaseDialogLine();
+                }
+                break;
+            case 1:
+                parchmentCollected = true;
+                break;
+            case 2:
+                swordCollected = true;
+                break;
+
         }
     }
 
@@ -86,6 +110,12 @@ public class GameManager : MonoBehaviour
         locker_Quest0.SetActive(false);
     }
 
+  
+    public void setTextQuest(string progress)
+    {
+        progressionQuest.SetText(progress);
+    }
+
     public void UnlockQuest_0()
     {
         isQuestActive = true;
@@ -101,13 +131,9 @@ public class GameManager : MonoBehaviour
         locker_Quest0.SetActive(false);
         titleQuest.SetText("A la cueillette aux champignons !");
         objectifQuest.SetText("Jacquie vous a commandité pour que vous lui rameniez trois gros champignons de la forêt. Il pourra peut-être alors vous en dire plus sur la prophétie...");
-        setTextQuest1("Total de champignons ramassés: " + mushroomCollected + "/3");
+        setTextQuest("Total de champignons ramassés: " + tomatoCollected + "/3");
         ShowQuest();
-    }
-
-    public void setTextQuest1(string progress)
-    {
-        progressionQuest.SetText(progress);
+        tomatoQuest.IncreaseDialogLine();
     }
 
     public void UnlockQuest_2()

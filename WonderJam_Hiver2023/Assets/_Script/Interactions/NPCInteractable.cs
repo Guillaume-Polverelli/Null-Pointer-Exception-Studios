@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class NPCInteractable : MonoBehaviour
 {
-    public Dialogue dialogue;
 
-
+    
     [SerializeField] private ChatBubble chatBubble;
     [SerializeField] private GameObject Player;
     [SerializeField] private AudioSource audioSource;
 
+    public Dialogue[] dialogue;
+
     private string textToDisplay;
+    private int nbDialogueToRead = 0;
 
 
     public void Update()
     {
-        if (dialogue.getStarted())
+        if (dialogue[nbDialogueToRead].getStarted())
         {
             Vector3 targetPosition = new Vector3(Player.transform.position.x,
                                                   transform.position.y,
@@ -27,14 +29,14 @@ public class NPCInteractable : MonoBehaviour
     public void Interact()
     {
         //if(GameManager.Instance.)
-        if (dialogue.getStarted())
+        if (dialogue[nbDialogueToRead].getStarted())
         {
             if (FindObjectOfType<DialogueManager>().isFinished())
             {
                 gameObject.GetComponent<NPC_Behavior>().ChangeIsStopped(false);
                 chatBubble.DestroyChatBubble();
                 Player.GetComponent<PlayerMovement>().setStopped(false);
-                dialogue.setStarted(false);
+                dialogue[nbDialogueToRead].setStarted(false);
             }
             else
             {
@@ -42,16 +44,26 @@ public class NPCInteractable : MonoBehaviour
                 chatBubble.NextMessage(textToDisplay);
                 if (FindObjectOfType<DialogueManager>().isFinished())
                 {
-                    GameManager.Instance.TestQuest(dialogue.quest);
+                    GameManager.Instance.TestQuest(dialogue[nbDialogueToRead].quest);
                 }
             }
         }
         else
         {
             gameObject.GetComponent<NPC_Behavior>().ChangeIsStopped(true);
-            dialogue.setStarted(true);
-            textToDisplay = FindObjectOfType<DialogueManager>().StartDialogue(dialogue, audioSource);
+            dialogue[nbDialogueToRead].setStarted(true);
+            textToDisplay = FindObjectOfType<DialogueManager>().StartDialogue(dialogue[nbDialogueToRead], audioSource);
             chatBubble.Create(textToDisplay);
         }
+    }
+
+    public void SetNbDialog(int nb)
+    {
+        nbDialogueToRead = nb;
+    }
+
+    public int GetNbDialog()
+    {
+        return nbDialogueToRead;
     }
 }
