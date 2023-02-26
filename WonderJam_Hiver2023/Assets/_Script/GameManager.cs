@@ -86,6 +86,9 @@ public class GameManager : MonoBehaviour
                 EndQuest_3();
                 UnlockQuest_4();
                 break;
+            case ("Combat3"):
+                listOfNPC[2].GetComponent<NPC_Behavior>().SetAttackRange(2);
+                break;
             default:
                 break;
         }
@@ -278,7 +281,15 @@ public class GameManager : MonoBehaviour
 
     public void UnlockRencontre3()
     {
+        setTextQuest("Epée démoniaque collectée : 1/1");
+        ShowQuest();
+
         listOfNPC[2].gameObject.SetActive(true);
         listOfNPC[2].gameObject.GetComponent<NPC_Behavior>().ChangeIsStopped(true);
+    }
+
+    public void EndRencontre_3()
+    {
+
     }
 }

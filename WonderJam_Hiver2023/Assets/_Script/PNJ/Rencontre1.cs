@@ -22,6 +22,7 @@ public class Rencontre1 : MonoBehaviour
                     GameManager.Instance.EndRencontre_2();
                     break;
                 case (2):
+                    GameManager.Instance.EndRencontre_3();
                     break;
 
             }
