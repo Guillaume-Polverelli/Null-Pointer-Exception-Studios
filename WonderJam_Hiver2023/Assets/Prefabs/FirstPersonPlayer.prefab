@@ -108,8 +108,8 @@ MonoBehaviour:
   XP: 90
   progressBarHP: {fileID: 0}
   progressBarXP: {fileID: 0}
-  regenValue: 0
-  regenCooldown: 0
+  regenValue: 1
+  regenCooldown: 0.05
 --- !u!1 &5156187888210468137
 GameObject:
   m_ObjectHideFlags: 0

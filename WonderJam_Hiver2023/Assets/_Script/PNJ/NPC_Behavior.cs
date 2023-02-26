@@ -128,7 +128,6 @@ public class NPC_Behavior : MonoBehaviour
 
         if (!bHasAttacked)
         {
-            print("Attaque");
             _animator.SetTrigger("Attack");
             bHasAttacked = true;
             Invoke(nameof(ResetAttack), attackCooldown);

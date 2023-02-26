@@ -32,7 +32,7 @@ public class PlayerInteract : MonoBehaviour
             Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
             foreach (Collider collider in colliderArray)
             {
-
+                print(collider.gameObject.name);
                 if (collider.TryGetComponent(out NPCInteractable npcInteractable))
                 {
                     print("E is clicked");
