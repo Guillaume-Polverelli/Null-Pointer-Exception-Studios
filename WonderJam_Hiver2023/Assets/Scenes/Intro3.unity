@@ -419,7 +419,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4282570495
   m_fontColor: {r: 1, g: 0.8400666, b: 0.2584905, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -608,7 +608,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a41625aa458385b4bac7b5943541cba8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -906,6 +906,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   introTextMesh: {fileID: 463732516}
-  text: zeoghdriohgORgdrwhgdhwrmgdwghdrgodrwghdwrogdwrighdrgmdwghodrhgiodrhwgrdhgih
+  text: "Il \xE9tait une fois, un royaume gouvern\xE9 par les Hommes. Longtemps terroris\xE9
+    par les arm\xE9es du Roi D\xE9mon, il fut terrass\xE9 par un courrageux H\xE9ros.
+    Cependant, une proph\xE9tie pr\xE9dirait l'arriv\xE9e d'une nouvelle menace.
+    Vous, Josselin Ren\xE9 Icedump, d\xE9cidez d'en apprendre plus sur cette proph\xE9tie."
   velocityText: 0.05
   musicSource: {fileID: 886078495}

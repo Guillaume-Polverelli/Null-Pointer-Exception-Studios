@@ -608,7 +608,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a41625aa458385b4bac7b5943541cba8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -891,7 +891,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   introTextMesh: {fileID: 463732516}
-  text: "foesifosegos\xEEhGosihghS\xD6ghos^gROghoR\xA8ghrO\xA8goRHgr\xA8ghROgihosRHgors^ghosrgihooRSgih-"
+  text: "Il \xE9tait une fois, un royaume gouvern\xE9 par les Hommes. Longtemps terroris\xE9
+    par les arm\xE9es du Roi D\xE9mon, il fut terrass\xE9 par un courrageux H\xE9ros.
+    Cependant, une proph\xE9tie pr\xE9dirait l'arriv\xE9e d'une nouvelle menace.
+    En tant qu'h\xE9ritier de ce H\xE9ros, il vous faut mainten"
   velocityText: 0.05
   beepSource: {fileID: 211414482}
   musicSource: {fileID: 886078495}
