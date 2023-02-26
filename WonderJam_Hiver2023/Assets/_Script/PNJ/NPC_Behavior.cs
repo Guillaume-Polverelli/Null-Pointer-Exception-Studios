@@ -157,4 +157,9 @@ public class NPC_Behavior : MonoBehaviour
     {
         this.attackRange = attackRange;
     }
+
+    public void Die()
+    {
+
+    }
 }

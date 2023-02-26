@@ -71,6 +71,23 @@ public class Character : MonoBehaviour
 
     public void Die()
     {
+        if (gameObject.GetComponent<Tonmou_Behavior>())
+        {
+            gameObject.GetComponent<Tonmou_Behavior>().Die();
+        }
+        else if (gameObject.GetComponent<NPC_Behavior>())
+        {
+            gameObject.GetComponent<NPC_Behavior>().Die();
+
+        }
+        else
+        {
+
+
+
+
+        }
+
         gameObject.SetActive(false);
         //Destroy(gameObject);
     }

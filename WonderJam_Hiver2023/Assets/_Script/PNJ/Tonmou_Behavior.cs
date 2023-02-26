@@ -143,4 +143,9 @@ public class Tonmou_Behavior : MonoBehaviour
     {
         bHasAttacked = false;
     }
+
+    public void Die()
+    {
+
+    }
 }
