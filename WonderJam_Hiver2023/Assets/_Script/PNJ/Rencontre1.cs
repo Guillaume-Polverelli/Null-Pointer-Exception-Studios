@@ -7,12 +7,14 @@ public class Rencontre1 : MonoBehaviour
     [SerializeField] BoxCollider boxCollider;
     [SerializeField] private int idRencontre;
     private bool dialogEnabled = false;
+    private bool isDead = false;
 
 
     public void Update()
     {
-        if (gameObject.GetComponent<Character>().getHP() <= 0)
+        if (gameObject.GetComponent<Character>().getHP() <= 0 && !isDead)
         {
+            isDead = true;
             switch (idRencontre)
             {
                 case (0):

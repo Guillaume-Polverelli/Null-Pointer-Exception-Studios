@@ -162,6 +162,6 @@ public class NPC_Behavior : MonoBehaviour
 
     public void Die()
     {
-
+        bIsDead = true;
     }
 }

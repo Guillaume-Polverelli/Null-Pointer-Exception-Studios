@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Parchemin parcheminQuest;
     [SerializeField] private Epee swordQuest;
 
+    [SerializeField] private SceneFinale finalScene;
+
     [SerializeField] private Transform parcheminParent;
     [SerializeField] private GameObject parcheminPrefab;
 
@@ -36,6 +38,10 @@ public class GameManager : MonoBehaviour
 
     private bool isQuestActive;
 
+    public NPCInteractable getNPCToTalk()
+    {
+        return NPCToTalkTo;
+    }
     public bool GetQuestActive()
     {
         return isQuestActive;
@@ -74,20 +80,38 @@ public class GameManager : MonoBehaviour
                 UnlockQuest_2();
                 break;
             case ("Combat1"):
-                listOfNPC[0].GetComponent<NPC_Behavior>().SetAttackRange(2);
+                listOfNPC[0].GetComponent<NPC_Behavior>().SetAttackRange(1);
                 break;
             case ("Quest3"):
                 UnlockQuest_3();
                 break;
             case ("Combat2"):
-                listOfNPC[1].GetComponent<NPC_Behavior>().SetAttackRange(2);
+                listOfNPC[1].GetComponent<NPC_Behavior>().SetAttackRange(1);
                 break;
             case ("Quest4"):
                 EndQuest_3();
                 UnlockQuest_4();
                 break;
             case ("Combat3"):
-                listOfNPC[2].GetComponent<NPC_Behavior>().SetAttackRange(2);
+                listOfNPC[2].GetComponent<NPC_Behavior>().SetAttackRange(1);
+                break;
+            case ("FeinteMort"):
+                swordQuest.IncreaseDialogLine();
+                finalScene.RemoveAnim();
+                break;
+            case ("Combat4"):
+                listOfNPC[2].GetComponent<NPC_Behavior>().SetAttackRange(1);
+                player.GetComponent<PlayerInteract>().setAttack(800);
+                player.GetComponent<Character>().setHealth(20000f, 100f);
+                break;
+            case ("TheEnd"):
+                player.GetComponent<PlayerMovement>().setStopped(true);
+                swordQuest.IncreaseDialogLine();
+                finalScene.HeroHasLeftGame();
+                break;
+            case ("EndGame"):
+                finalScene.FinishTheGame();
+                player.GetComponent<PlayerMovement>().setStopped(true);
                 break;
             default:
                 break;
@@ -170,7 +194,7 @@ public class GameManager : MonoBehaviour
     public void UnlockQuest_2()
     {
         isQuestActive = true;
-        NPCToTalkTo = listOfNPC[0];
+        NPCToTalkTo = null;
         listOfNPC[0].gameObject.SetActive(true);
     }
 
@@ -220,7 +244,7 @@ public class GameManager : MonoBehaviour
     public void EndQuest_1()
     {
         isQuestActive = false;
-        NPCToTalkTo = listOfNPC[4];
+        NPCToTalkTo = null;
         HideQuest();
         titleQuest.SetText("Quest cleared !");
         titleQuest.gameObject.SetActive(true);
@@ -238,7 +262,7 @@ public class GameManager : MonoBehaviour
     public void EndQuest_3()
     {
         isQuestActive = false;
-        NPCToTalkTo = listOfNPC[2];
+        NPCToTalkTo = null;
         HideQuest();
         titleQuest.SetText("Quest cleared !");
         titleQuest.gameObject.SetActive(true);
@@ -264,7 +288,7 @@ public class GameManager : MonoBehaviour
 
     public void UnlockRencontre2()
     {
-        NPCToTalkTo = listOfNPC[1];
+        NPCToTalkTo = null;
         parcheminQuest.IncreaseDialogLine();
 
         setTextQuest("Parchemin collecté : 1/1");
@@ -290,6 +314,13 @@ public class GameManager : MonoBehaviour
 
     public void EndRencontre_3()
     {
+        swordQuest.IncreaseDialogLine();
+        listOfNPC[2].Interact();
+    }
 
+    public void CalmHero()
+    {
+        listOfNPC[2].GetComponent<NPC_Behavior>().SetAttackRange(0);
+        swordQuest.IncreaseDialogLine();
     }
 }

@@ -51,8 +51,10 @@ public class PlayerInteract : MonoBehaviour
                 print(collider.gameObject.name);
                 if (collider.TryGetComponent(out NPCInteractable npcInteractable))
                 {
-                    GetComponent<PlayerMovement>().setStopped(true);
-                    npcInteractable.Interact();
+                    if (npcInteractable == GameManager.Instance.getNPCToTalk() || !npcInteractable.getIsGiving() )
+                    {
+                        npcInteractable.Interact();
+                    }
                 }
                 else if(collider.TryGetComponent(out ObjectInteractable objectInteractable))
                 {
@@ -105,5 +107,10 @@ public class PlayerInteract : MonoBehaviour
                 swordAudioSource.Play();
             }
         }
+    }
+
+    public void setAttack(float damage)
+    {
+        damagePower = damage;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class NPCInteractable : MonoBehaviour
 {
 
-    
+    [SerializeField] private bool isGivingQuest;
     [SerializeField] private ChatBubble chatBubble;
     [SerializeField] private GameObject Player;
     [SerializeField] private AudioSource audioSource;
@@ -30,6 +30,7 @@ public class NPCInteractable : MonoBehaviour
     }
     public void Interact()
     {
+        Player.GetComponent<PlayerMovement>().setStopped(true);
         //if(GameManager.Instance.)
         if (dialogue[nbDialogueToRead].getStarted())
         {
@@ -44,6 +45,7 @@ public class NPCInteractable : MonoBehaviour
             }
             else
             {
+                
                 textToDisplay = FindObjectOfType<DialogueManager>().DisplayNextSentence(audioSource);
                 string[] splitArray = textToDisplay.Split(char.Parse(";"));
                 string playerTalking = splitArray[0];
@@ -97,6 +99,10 @@ public class NPCInteractable : MonoBehaviour
         }
     }
 
+    public bool getIsGiving()
+    {
+        return isGivingQuest;
+    }
     public void SetNbDialog(int nb)
     {
         nbDialogueToRead = nb;

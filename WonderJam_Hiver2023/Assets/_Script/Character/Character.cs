@@ -11,14 +11,16 @@ public class Character : MonoBehaviour
     [SerializeField] private float XP;
     [SerializeField] private GameObject progressBarHP;
     [SerializeField] private GameObject progressBarXP;
-    [SerializeField] private int regenValue;
+    [SerializeField] private float regenValue;
     [SerializeField] private float regenCooldown;
     [SerializeField] private TMP_Text level;
     [SerializeField] private SceneFinale finalScene;
 
 
+
     private float HP;
     private float timeCounter = 0f;
+    private bool isDead = false;
     public void Start()
     {
         HP = maxHP;
@@ -61,7 +63,7 @@ public class Character : MonoBehaviour
         return false;
     }
 
-    public void Regen(int value)
+    public void Regen(float value)
     {
         HP += value;
         if(HP > maxHP)
@@ -83,7 +85,14 @@ public class Character : MonoBehaviour
         }
         else
         {
-            finalScene.Init();
+            if(!isDead)
+            {
+                GameManager.Instance.CalmHero();
+                finalScene.Init();
+                isDead = true;
+            }
+            
+
 
 
 
@@ -107,5 +116,11 @@ public class Character : MonoBehaviour
     public float getHP()
     {
         return HP;
+    }
+
+    public void setHealth(float maxHP, float regen)
+    {
+        this.maxHP = maxHP;
+        this.regenValue = regen;
     }
 }
