@@ -21,7 +21,6 @@ public class DialogueManager : MonoBehaviour
     public string StartDialogue(Dialogue dialogue, AudioSource audioSource)
     {
         instanceDialogue = dialogue;
-        Debug.Log("Starting conversation with" + instanceDialogue.name);
 
         sentences.Clear();
         audioClips.Clear();

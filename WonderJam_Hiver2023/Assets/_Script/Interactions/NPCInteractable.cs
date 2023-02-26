@@ -26,6 +26,7 @@ public class NPCInteractable : MonoBehaviour
     }
     public void Interact()
     {
+        //if(GameManager.Instance.)
         if (dialogue.getStarted())
         {
             if (FindObjectOfType<DialogueManager>().isFinished())
@@ -41,7 +42,7 @@ public class NPCInteractable : MonoBehaviour
                 chatBubble.NextMessage(textToDisplay);
                 if (FindObjectOfType<DialogueManager>().isFinished())
                 {
-                    GameManager.Instance.TestQuest(dialogue.name);
+                    GameManager.Instance.TestQuest(dialogue.quest);
                 }
             }
         }
