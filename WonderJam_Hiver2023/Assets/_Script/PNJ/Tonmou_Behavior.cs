@@ -149,6 +149,8 @@ public class Tonmou_Behavior : MonoBehaviour
 
     public void Die()
     {
-
+        if (bIsDead) return;
+        _animator.SetTrigger("Die");
+        bIsDead = true;
     }
 }
