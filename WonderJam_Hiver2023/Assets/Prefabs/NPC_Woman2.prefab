@@ -86,6 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bbdf7594b400f940b9250b5cd75db8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGivingQuest: 0
   chatBubble: {fileID: 5585335123828171083}
   Player: {fileID: 0}
   audioSource: {fileID: 6404862493187332010}
@@ -239,6 +240,7 @@ MonoBehaviour:
     m_Bits: 256
   destination: {x: 0, y: 0, z: 0}
   destinationDistance: 20
+  damages: 0
   attackCooldown: 1
   sightRange: 0
   attackRange: 0
@@ -357,6 +359,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3026690087071954999}
     m_Modifications:
+    - target: {fileID: 3461943800601265708, guid: 7e6887a9596fe784da6c5bb4445cdb1c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461943800601265708, guid: 7e6887a9596fe784da6c5bb4445cdb1c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461943800601265711, guid: 7e6887a9596fe784da6c5bb4445cdb1c, type: 3}
+      propertyPath: m_Size.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461943800601265711, guid: 7e6887a9596fe784da6c5bb4445cdb1c, type: 3}
+      propertyPath: m_Size.y
+      value: 6.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461943800601265711, guid: 7e6887a9596fe784da6c5bb4445cdb1c, type: 3}
+      propertyPath: m_DrawMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3461943801072553446, guid: 7e6887a9596fe784da6c5bb4445cdb1c, type: 3}
       propertyPath: m_RootOrder
       value: 0

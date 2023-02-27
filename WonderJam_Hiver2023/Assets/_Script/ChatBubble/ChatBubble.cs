@@ -51,9 +51,9 @@ public class ChatBubble : MonoBehaviour
         Vector2 padding = new Vector2(3f, 3f);
         backgroundSpriteRenderer.size = textSize + padding;
 
-        Vector3 offset = new Vector3(-8f, 0f);
-        backgroundSpriteRenderer.transform.localPosition =
-            new Vector3(backgroundSpriteRenderer.size.x / 2f, 0f) + offset;
+        //Vector3 offset = new Vector3(-8f, 0f);
+        //backgroundSpriteRenderer.transform.localPosition =
+            //new Vector3(backgroundSpriteRenderer.size.x / 2f, 0f) + offset;
 
         StartCoroutine(Writer(text));
 
