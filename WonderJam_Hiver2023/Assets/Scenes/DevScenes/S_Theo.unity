@@ -3761,7 +3761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7120007008666872738, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
       propertyPath: centerOverlap
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
@@ -6469,6 +6469,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 15188537}
     m_Modifications:
+    - target: {fileID: 1084818158584904652, guid: 27c45fb6e0d3cfd4183707298c2844b8, type: 3}
+      propertyPath: m_Radius
+      value: 0.3868164
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084818158584904652, guid: 27c45fb6e0d3cfd4183707298c2844b8, type: 3}
+      propertyPath: m_Center.z
+      value: 0.0868164
+      objectReference: {fileID: 0}
     - target: {fileID: 3026690087071954998, guid: 27c45fb6e0d3cfd4183707298c2844b8, type: 3}
       propertyPath: m_Name
       value: NPC_Woman2
@@ -13185,6 +13193,18 @@ PrefabInstance:
       propertyPath: dialogue.Array.data[3].sentences.Array.data[10]
       value: 1;Je vais pouvoir me faire rembourser !
       objectReference: {fileID: 0}
+    - target: {fileID: 1976335125490634354, guid: 2d9545d4ebcf74043b7bdf203fac6944, type: 3}
+      propertyPath: m_Radius
+      value: 0.46693435
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976335125490634354, guid: 2d9545d4ebcf74043b7bdf203fac6944, type: 3}
+      propertyPath: m_Center.x
+      value: -9.996199e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976335125490634354, guid: 2d9545d4ebcf74043b7bdf203fac6944, type: 3}
+      propertyPath: m_Center.z
+      value: -0.024876952
+      objectReference: {fileID: 0}
     - target: {fileID: 1976335125959659850, guid: 2d9545d4ebcf74043b7bdf203fac6944, type: 3}
       propertyPath: m_fontSize
       value: 20
@@ -13215,7 +13235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4910027095755656885, guid: 2d9545d4ebcf74043b7bdf203fac6944, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5721888255922623503, guid: 2d9545d4ebcf74043b7bdf203fac6944, type: 3}
       propertyPath: m_RootOrder
@@ -15971,6 +15991,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 15188537}
     m_Modifications:
+    - target: {fileID: 1084818158584904652, guid: b0a2159d874259d48861247976e5ebaa, type: 3}
+      propertyPath: m_Radius
+      value: 0.4381546
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084818158584904652, guid: b0a2159d874259d48861247976e5ebaa, type: 3}
+      propertyPath: m_Center.z
+      value: 0.1381546
+      objectReference: {fileID: 0}
     - target: {fileID: 2964323588663284394, guid: b0a2159d874259d48861247976e5ebaa, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -23622,6 +23650,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 15188537}
     m_Modifications:
+    - target: {fileID: 1084818158584904652, guid: 9ceadef55b9c4eb43bcc76df4574924a, type: 3}
+      propertyPath: m_Radius
+      value: 0.40945283
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084818158584904652, guid: 9ceadef55b9c4eb43bcc76df4574924a, type: 3}
+      propertyPath: m_Center.z
+      value: 0.109452814
+      objectReference: {fileID: 0}
     - target: {fileID: 3026690087071954998, guid: 9ceadef55b9c4eb43bcc76df4574924a, type: 3}
       propertyPath: m_Name
       value: NPC_Priest
@@ -28017,6 +28053,18 @@ PrefabInstance:
       propertyPath: dialogue.Array.data[1].sentences.Array.data[4]
       value: 1;Azy ntm !
       objectReference: {fileID: 0}
+    - target: {fileID: 1976335125490634354, guid: 2d9545d4ebcf74043b7bdf203fac6944, type: 3}
+      propertyPath: m_Radius
+      value: 0.46582675
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976335125490634354, guid: 2d9545d4ebcf74043b7bdf203fac6944, type: 3}
+      propertyPath: m_Center.x
+      value: -1.8506989e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976335125490634354, guid: 2d9545d4ebcf74043b7bdf203fac6944, type: 3}
+      propertyPath: m_Center.z
+      value: 0.013146938
+      objectReference: {fileID: 0}
     - target: {fileID: 1976335125959659850, guid: 2d9545d4ebcf74043b7bdf203fac6944, type: 3}
       propertyPath: m_fontSize
       value: 20
@@ -30545,6 +30593,18 @@ PrefabInstance:
     - target: {fileID: 1976335125490634353, guid: 2d9545d4ebcf74043b7bdf203fac6944, type: 3}
       propertyPath: dialogue.Array.data[1].sentences.Array.data[4]
       value: 1;Azy ntm !
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976335125490634354, guid: 2d9545d4ebcf74043b7bdf203fac6944, type: 3}
+      propertyPath: m_Radius
+      value: 0.4918282
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976335125490634354, guid: 2d9545d4ebcf74043b7bdf203fac6944, type: 3}
+      propertyPath: m_Center.x
+      value: -1.5490928e-11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976335125490634354, guid: 2d9545d4ebcf74043b7bdf203fac6944, type: 3}
+      propertyPath: m_Center.z
+      value: 0.0053058867
       objectReference: {fileID: 0}
     - target: {fileID: 1976335125959659850, guid: 2d9545d4ebcf74043b7bdf203fac6944, type: 3}
       propertyPath: m_text
@@ -37975,6 +38035,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.7924528
       objectReference: {fileID: 0}
+    - target: {fileID: 1084818158584904652, guid: bc64360e754854241a972c7fa533e96f, type: 3}
+      propertyPath: m_Radius
+      value: 0.41037598
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084818158584904652, guid: bc64360e754854241a972c7fa533e96f, type: 3}
+      propertyPath: m_Center.z
+      value: 0.11037597
+      objectReference: {fileID: 0}
     - target: {fileID: 3026690087071954998, guid: bc64360e754854241a972c7fa533e96f, type: 3}
       propertyPath: m_Name
       value: NPC_Woman
@@ -39580,6 +39648,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 15188537}
     m_Modifications:
+    - target: {fileID: 1084818158584904652, guid: fbae5ce73bf09c34da7c54ee2ed9c702, type: 3}
+      propertyPath: m_Radius
+      value: 0.42581788
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084818158584904652, guid: fbae5ce73bf09c34da7c54ee2ed9c702, type: 3}
+      propertyPath: m_Center.z
+      value: 0.12581787
+      objectReference: {fileID: 0}
     - target: {fileID: 3026690087071954998, guid: fbae5ce73bf09c34da7c54ee2ed9c702, type: 3}
       propertyPath: m_Name
       value: NPC_Man
