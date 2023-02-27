@@ -27482,6 +27482,34 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4455871558605097984, guid: 307d43102cc29fb44918a171bdcbd55e, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455871558605097984, guid: 307d43102cc29fb44918a171bdcbd55e, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 5424346971334827037, guid: 307d43102cc29fb44918a171bdcbd55e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.120000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5424346971334827037, guid: 307d43102cc29fb44918a171bdcbd55e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.040000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 5424346971334827037, guid: 307d43102cc29fb44918a171bdcbd55e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5424346971334827037, guid: 307d43102cc29fb44918a171bdcbd55e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369278849326411094, guid: 307d43102cc29fb44918a171bdcbd55e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 307d43102cc29fb44918a171bdcbd55e, type: 3}
 --- !u!114 &1160827875 stripped
@@ -38202,15 +38230,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3156955694209471641, guid: bc64360e754854241a972c7fa533e96f, type: 3}
       propertyPath: dialogue.Array.data[1].sentences.Array.data[0]
-      value: 0;C'est tout ce que tu as pu trouver ?!
+      value: 1;C'est tout ce que tu as pu trouver ?!
       objectReference: {fileID: 0}
     - target: {fileID: 3156955694209471641, guid: bc64360e754854241a972c7fa533e96f, type: 3}
       propertyPath: dialogue.Array.data[1].sentences.Array.data[1]
-      value: 0;C'est pas avec si peu que je vais pouvoir me nourrir !
+      value: 1;C'est pas avec si peu que je vais pouvoir me nourrir !
       objectReference: {fileID: 0}
     - target: {fileID: 3156955694209471641, guid: bc64360e754854241a972c7fa533e96f, type: 3}
       propertyPath: dialogue.Array.data[1].sentences.Array.data[2]
-      value: 0;Mais qu'est-ce que tu attends ?!
+      value: 1,Mais qu'est-ce que tu attends ?!
       objectReference: {fileID: 0}
     - target: {fileID: 3156955694209471641, guid: bc64360e754854241a972c7fa533e96f, type: 3}
       propertyPath: dialogue.Array.data[2].sentences.Array.data[0]
