@@ -43,6 +43,8 @@ public class Tonmou_Behavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (bIsDead) return;
+
         if(_navMeshAgent.velocity.magnitude == 0)
         {
             _animator.SetBool("Walk Forward", false);
@@ -151,6 +153,7 @@ public class Tonmou_Behavior : MonoBehaviour
     {
         if (bIsDead) return;
         _animator.SetTrigger("Die");
+        _navMeshAgent.enabled = false;
         bIsDead = true;
     }
 }
