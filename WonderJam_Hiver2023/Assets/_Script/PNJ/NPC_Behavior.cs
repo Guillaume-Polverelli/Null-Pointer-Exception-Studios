@@ -15,6 +15,7 @@ public class NPC_Behavior : MonoBehaviour
     private NavMeshAgent _navMeshAgent;
 
     private bool bHasAttacked;
+    private bool bInFight = false;
 
     private Animator _animator;
 
@@ -30,6 +31,13 @@ public class NPC_Behavior : MonoBehaviour
     private bool bPlayerInAttackRange;
 
     private bool bIsDead;
+
+    public void SetFightMode(bool newMode)
+    {
+        bInFight = newMode;
+    }
+
+    public bool GetFighrMode() { return this.bInFight; }
 
     public void Awake()
     {
@@ -127,12 +135,14 @@ public class NPC_Behavior : MonoBehaviour
 
     public void ChasePlayer()
     {
+        if(!_navMeshAgent.isStopped) SetFightMode(true);
         _navMeshAgent.speed = runSpeed;
         _navMeshAgent.SetDestination(Player.position);
     }
 
     public void AttackPlayer()
     {
+        if (!_navMeshAgent.isStopped) SetFightMode(true);
         _navMeshAgent.SetDestination(transform.position);
         transform.LookAt(Player);
 
@@ -164,6 +174,12 @@ public class NPC_Behavior : MonoBehaviour
     {
         if (bIsDead) return;
         _animator.SetTrigger("Die");
+        _navMeshAgent.enabled = false;
         bIsDead = true;
+
+        Destroy(GetComponent<Rencontre1>());
+        Destroy(GetComponent<Character>());
+
+
     }
 }

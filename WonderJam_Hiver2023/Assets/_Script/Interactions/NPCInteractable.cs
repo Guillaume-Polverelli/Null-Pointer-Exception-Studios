@@ -30,8 +30,11 @@ public class NPCInteractable : MonoBehaviour
     }
     public void Interact()
     {
+        print(GetComponent<NPC_Behavior>().GetFighrMode());
+
+        if (isGivingQuest && !GameManager.Instance.getNPCToTalk() == this || GetComponent<NPC_Behavior>().GetFighrMode() == true) return;
+
         Player.GetComponent<PlayerMovement>().setStopped(true);
-        //if(GameManager.Instance.)
         if (dialogue[nbDialogueToRead].getStarted())
         {
             if (FindObjectOfType<DialogueManager>().isFinished())

@@ -35,7 +35,6 @@ public class ParcheminErrorText : MonoBehaviour
     }
     public void OnClickedAccepterQuete()
     {
-        player.GetComponent<PlayerMovement>().setStopped(true);
         StartCoroutine(Writer("ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED " +
             "ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED"));
     }

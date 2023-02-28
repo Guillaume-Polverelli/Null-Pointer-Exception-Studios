@@ -135,6 +135,7 @@ public class GameManager : MonoBehaviour
                 parchmentCollected = true;
                 GameObject parchemin = Instantiate(parcheminPrefab, parcheminParent);
                 parchemin.GetComponentInChildren<ParcheminErrorText>().setPlayer(player);
+                player.GetComponent<PlayerMovement>().setStopped(true);
                 break;
             case 2:
                 swordCollected = true;

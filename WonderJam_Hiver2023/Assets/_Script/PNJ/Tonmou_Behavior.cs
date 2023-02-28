@@ -155,5 +155,6 @@ public class Tonmou_Behavior : MonoBehaviour
         _animator.SetTrigger("Die");
         _navMeshAgent.enabled = false;
         bIsDead = true;
+        Destroy(GetComponent<Character>());
     }
 }
