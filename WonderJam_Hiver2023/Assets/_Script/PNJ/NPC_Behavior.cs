@@ -143,6 +143,7 @@ public class NPC_Behavior : MonoBehaviour
     public void AttackPlayer()
     {
         if (!_navMeshAgent.isStopped) SetFightMode(true);
+
         _navMeshAgent.SetDestination(transform.position);
         transform.LookAt(Player);
 
@@ -177,9 +178,7 @@ public class NPC_Behavior : MonoBehaviour
         _navMeshAgent.enabled = false;
         bIsDead = true;
 
-        Destroy(GetComponent<Rencontre1>());
+        GetComponent<Rencontre1>().EndRencontre();
         Destroy(GetComponent<Character>());
-
-
     }
 }

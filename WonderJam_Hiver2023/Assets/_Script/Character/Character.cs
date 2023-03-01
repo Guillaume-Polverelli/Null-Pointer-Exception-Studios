@@ -88,7 +88,6 @@ public class Character : MonoBehaviour
             if(!isDead)
             {
                 GameManager.Instance.CalmHero();
-                finalScene.Init();
                 isDead = true;
             }
             

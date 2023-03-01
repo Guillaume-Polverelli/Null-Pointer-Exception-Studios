@@ -45,7 +45,7 @@ public class PlayerInteract : MonoBehaviour
 
             //Use the OverlapBox to detect if there are any other colliders within this box area.
             //Use the GameObject's centre, half the size (as a radius) and rotation. This creates an invisible box around your GameObject.
-            var hitColliders = Physics.OverlapBox(playerPos + centerOverlap * playerDirection, transform.localScale / 2, playerRotation);
+            var hitColliders = Physics.OverlapBox(playerPos + centerOverlap * playerDirection, transform.localScale / 1, playerRotation);
             foreach (var collider in hitColliders)
             {
                 print(collider.gameObject.name);

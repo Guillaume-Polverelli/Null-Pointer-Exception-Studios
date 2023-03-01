@@ -255,6 +255,7 @@ public class GameManager : MonoBehaviour
 
     public void EndQuest_2()
     {
+        print("CE QUI COMPTE CEST PAS LARRIVEE CEST LA QUETE");
         isQuestActive = false;
         NPCToTalkTo = listOfNPC[4];
         parcheminQuest.setVisibilityIcon(true);
@@ -316,12 +317,17 @@ public class GameManager : MonoBehaviour
     public void EndRencontre_3()
     {
         swordQuest.IncreaseDialogLine();
+        listOfNPC[2].GetComponent<NPC_Behavior>().ChangeIsStopped(true);
+        listOfNPC[2].GetComponent<NPC_Behavior>().SetFightMode(false);
         listOfNPC[2].Interact();
     }
 
     public void CalmHero()
     {
         listOfNPC[2].GetComponent<NPC_Behavior>().SetAttackRange(0);
+        listOfNPC[2].GetComponent<NPC_Behavior>().ChangeIsStopped(true);
+        listOfNPC[2].GetComponent<NPC_Behavior>().SetFightMode(false);
         swordQuest.IncreaseDialogLine();
+        finalScene.Init();
     }
 }
