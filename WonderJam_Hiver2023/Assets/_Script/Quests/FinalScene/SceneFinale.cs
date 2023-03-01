@@ -37,6 +37,6 @@ public class SceneFinale : MonoBehaviour
 
     public void LoadEndLevel()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(5);
     }
 }
