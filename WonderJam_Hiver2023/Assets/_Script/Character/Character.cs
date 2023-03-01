@@ -16,7 +16,7 @@ public class Character : MonoBehaviour
     [SerializeField] private TMP_Text level;
     [SerializeField] private SceneFinale finalScene;
 
-
+    [SerializeField] private AudioSource npcAudioSource;
 
     private float HP;
     private float timeCounter = 0f;
@@ -81,6 +81,7 @@ public class Character : MonoBehaviour
         else if (gameObject.GetComponent<NPC_Behavior>())
         {
             gameObject.GetComponent<NPC_Behavior>().Die();
+            npcAudioSource.Play();
 
         }
         else

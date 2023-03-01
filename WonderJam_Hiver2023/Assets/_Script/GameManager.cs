@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Transform[] spawnPointsHero;
 
+    [SerializeField] private AudioSource DemonSwordAudioSource;
+    [SerializeField] private AudioSource ScrollAudioSource;
+
     private NPCInteractable NPCToTalkTo;
     private int tomatoCollected = 0;
     private bool parchmentCollected = false;
@@ -132,12 +135,14 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case 1:
+                ScrollAudioSource.Play();
                 parchmentCollected = true;
                 GameObject parchemin = Instantiate(parcheminPrefab, parcheminParent);
                 parchemin.GetComponentInChildren<ParcheminErrorText>().setPlayer(player);
                 player.GetComponent<PlayerMovement>().setStopped(true);
                 break;
             case 2:
+                DemonSwordAudioSource.Play();
                 swordCollected = true;
                 UnlockRencontre3();
                 break;

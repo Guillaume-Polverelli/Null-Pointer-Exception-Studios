@@ -27,6 +27,8 @@ public class NPC_Behavior : MonoBehaviour
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
 
+    [SerializeField] private AudioSource SwordAudioSource;
+
     private bool bPlayerInSight;
     private bool bPlayerInAttackRange;
 
@@ -149,6 +151,7 @@ public class NPC_Behavior : MonoBehaviour
 
         if (!bHasAttacked)
         {
+            SwordAudioSource.Play();
             _animator.SetTrigger("Attack");
             bHasAttacked = true;
             Invoke(nameof(ResetAttack), attackCooldown);
