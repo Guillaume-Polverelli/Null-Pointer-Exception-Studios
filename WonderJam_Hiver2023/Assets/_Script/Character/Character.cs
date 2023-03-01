@@ -77,6 +77,7 @@ public class Character : MonoBehaviour
         if (gameObject.GetComponent<Tonmou_Behavior>())
         {
             gameObject.GetComponent<Tonmou_Behavior>().Die();
+            npcAudioSource.Play();
         }
         else if (gameObject.GetComponent<NPC_Behavior>())
         {

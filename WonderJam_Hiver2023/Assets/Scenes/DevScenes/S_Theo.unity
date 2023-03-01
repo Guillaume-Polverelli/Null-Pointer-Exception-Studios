@@ -4002,15 +4002,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5156187887936275470, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 300.02
+      value: 79.16
       objectReference: {fileID: 0}
     - target: {fileID: 5156187887936275470, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.69
+      value: 7.41
       objectReference: {fileID: 0}
     - target: {fileID: 5156187887936275470, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 110.51
+      value: 265.65
       objectReference: {fileID: 0}
     - target: {fileID: 5156187887936275470, guid: 7534b2e78b43fcc44a28712866dbe05a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14453,6 +14453,10 @@ PrefabInstance:
       propertyPath: progressBarXP
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1776889193157768042, guid: b9967c0a2e42ca643a4dbac031ebc1b0, type: 3}
+      propertyPath: npcAudioSource
+      value: 
+      objectReference: {fileID: 585549503}
     - target: {fileID: 1925843959223099036, guid: b9967c0a2e42ca643a4dbac031ebc1b0, type: 3}
       propertyPath: Player
       value: 
@@ -14507,6 +14511,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9967c0a2e42ca643a4dbac031ebc1b0, type: 3}
+--- !u!82 &585549503 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6413158764059627364, guid: b9967c0a2e42ca643a4dbac031ebc1b0, type: 3}
+  m_PrefabInstance: {fileID: 585549502}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &588987926
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20836,6 +20845,10 @@ PrefabInstance:
       propertyPath: progressBarXP
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1776889193157768042, guid: b9967c0a2e42ca643a4dbac031ebc1b0, type: 3}
+      propertyPath: npcAudioSource
+      value: 
+      objectReference: {fileID: 851851469}
     - target: {fileID: 1925843959223099036, guid: b9967c0a2e42ca643a4dbac031ebc1b0, type: 3}
       propertyPath: Player
       value: 
@@ -20890,6 +20903,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9967c0a2e42ca643a4dbac031ebc1b0, type: 3}
+--- !u!82 &851851469 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6413158764059627364, guid: b9967c0a2e42ca643a4dbac031ebc1b0, type: 3}
+  m_PrefabInstance: {fileID: 851851468}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &859062571
 PrefabInstance:
   m_ObjectHideFlags: 0
