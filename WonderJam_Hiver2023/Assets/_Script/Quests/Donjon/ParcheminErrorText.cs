@@ -11,6 +11,7 @@ public class ParcheminErrorText : MonoBehaviour
     public GameObject player;
     [SerializeField] private GameObject parchemin;
     [SerializeField] private float velocityText;
+    [SerializeField] private AudioSource errorAudioSource;
 
     private bool trigger = false;
 
@@ -35,6 +36,7 @@ public class ParcheminErrorText : MonoBehaviour
     }
     public void OnClickedAccepterQuete()
     {
+        errorAudioSource.Play();
         StartCoroutine(Writer("ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED " +
             "ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED ACCESS DENIED"));
     }
@@ -62,6 +64,7 @@ public class ParcheminErrorText : MonoBehaviour
         Destroy(parchemin);
         player.GetComponent<PlayerMovement>().setStopped(false);
         GameManager.Instance.UnlockRencontre2();
+        errorAudioSource.Stop();
     }
 
 
