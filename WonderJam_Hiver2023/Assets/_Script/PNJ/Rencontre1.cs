@@ -34,6 +34,8 @@ public class Rencontre1 : MonoBehaviour
         */
     }
 
+    public bool GetDialogEnabled() { return dialogEnabled; }
+
     public void EndRencontre()
     {
         switch (idRencontre)
@@ -57,10 +59,11 @@ public class Rencontre1 : MonoBehaviour
     {
         if (other.TryGetComponent(out PlayerInteract player) && !dialogEnabled)
         {
+            dialogEnabled = true;
             gameObject.GetComponent<NPC_Behavior>().ChangeIsStopped(true);
             gameObject.GetComponent<NPC_Behavior>().SetFightMode(false);
             gameObject.GetComponent<NPCInteractable>().Interact();
-            dialogEnabled = true;
+            
             Vector3 targetPosition = new Vector3(gameObject.transform.position.x,
                                                   other.transform.position.y,
                                                   gameObject.transform.position.z);

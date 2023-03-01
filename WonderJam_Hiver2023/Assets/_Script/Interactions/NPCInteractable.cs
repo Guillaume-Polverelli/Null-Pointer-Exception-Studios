@@ -30,6 +30,7 @@ public class NPCInteractable : MonoBehaviour
     }
     public void Interact()
     {
+        if (GetComponent<Rencontre1>() && !GetComponent<Rencontre1>().GetDialogEnabled()) return;
 
         if ((isGivingQuest && !GameManager.Instance.getNPCToTalk() == this) || GetComponent<NPC_Behavior>().GetFighrMode() == true) return;
 
