@@ -19,12 +19,20 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private float attackCD;
     [SerializeField] private float timeElapsed;
 
+    private bool bCanAttck = true;
+
 
     // Start is called before the first frame update
     void Start()
     {
         
     }
+
+    public void SetCanAttack(bool canAttack)
+    {
+        bCanAttck = canAttack;
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -48,7 +56,6 @@ public class PlayerInteract : MonoBehaviour
             var hitColliders = Physics.OverlapBox(playerPos + centerOverlap * playerDirection, transform.localScale / 1, playerRotation);
             foreach (var collider in hitColliders)
             {
-                print(collider.gameObject.name);
                 if (collider.TryGetComponent(out NPCInteractable npcInteractable))
                 {
                     if (npcInteractable == GameManager.Instance.getNPCToTalk() || !npcInteractable.getIsGiving() )
@@ -66,6 +73,8 @@ public class PlayerInteract : MonoBehaviour
 
     public void SwordAttack()
     {
+        if (!bCanAttck) return;
+
         if (Input.GetMouseButtonDown(0) && timeElapsed >= attackCD)
         {
             timeElapsed = 0f;

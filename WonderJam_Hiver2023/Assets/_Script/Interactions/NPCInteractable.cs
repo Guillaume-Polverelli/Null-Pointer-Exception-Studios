@@ -38,12 +38,14 @@ public class NPCInteractable : MonoBehaviour
         {
             if (FindObjectOfType<DialogueManager>().isFinished())
             {
+                Player.GetComponent<PlayerInteract>().SetCanAttack(true);
                 gameObject.GetComponent<NPC_Behavior>().ChangeIsStopped(false);
                 Player.GetComponent<PlayerMovement>().setStopped(false);
                 chatBubble.DestroyChatBubble();
                 textToHUD.SetTextActive(false);
                 dialogue[nbDialogueToRead].setStarted(false);
                 GameManager.Instance.TestQuest(dialogue[nbDialogueToRead].quest);
+                
             }
             else
             {
@@ -82,6 +84,7 @@ public class NPCInteractable : MonoBehaviour
         }
         else
         {
+            Player.GetComponent<PlayerInteract>().SetCanAttack(false);
             gameObject.GetComponent<NPC_Behavior>().ChangeIsStopped(true);
             dialogue[nbDialogueToRead].setStarted(true);
             textToDisplay = FindObjectOfType<DialogueManager>().StartDialogue(dialogue[nbDialogueToRead], audioSource);
