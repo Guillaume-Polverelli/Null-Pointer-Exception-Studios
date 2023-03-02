@@ -10,6 +10,8 @@ public class NPCInteractable : MonoBehaviour
     [SerializeField] private GameObject Player;
     [SerializeField] private AudioSource audioSource;
 
+    [SerializeField] private GameObject questionMark;
+
     [SerializeField] private DialogHUD textToHUD;
 
     public Dialogue[] dialogue;
@@ -30,6 +32,10 @@ public class NPCInteractable : MonoBehaviour
     }
     public void Interact()
     {
+        if(questionMark != null)
+        {
+            questionMark.SetActive(false);
+        }
         if (GetComponent<Rencontre1>() && !GetComponent<Rencontre1>().GetDialogEnabled()) return;
 
         if ((isGivingQuest && !GameManager.Instance.getNPCToTalk() == this) || GetComponent<NPC_Behavior>().GetFighrMode() == true) return;
@@ -46,7 +52,11 @@ public class NPCInteractable : MonoBehaviour
                 textToHUD.SetTextActive(false);
                 dialogue[nbDialogueToRead].setStarted(false);
                 GameManager.Instance.TestQuest(dialogue[nbDialogueToRead].quest);
-                
+                if (questionMark != null && GameManager.Instance.GetIsQuest())
+                {
+                    questionMark.SetActive(true);
+                }
+
             }
             else
             {

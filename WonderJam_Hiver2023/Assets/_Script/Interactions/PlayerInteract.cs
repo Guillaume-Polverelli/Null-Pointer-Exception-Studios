@@ -61,6 +61,7 @@ public class PlayerInteract : MonoBehaviour
                     if (npcInteractable == GameManager.Instance.getNPCToTalk() || !npcInteractable.getIsGiving() )
                     {
                         npcInteractable.Interact();
+                        break;
                     }
                 }
                 else if(collider.TryGetComponent(out ObjectInteractable objectInteractable))

@@ -68,6 +68,11 @@ public class GameManager : MonoBehaviour
         //NPCToTalkTo = listOfNPC[0];
     }
 
+    public bool GetIsQuest()
+    {
+        return isQuestActive;
+    }
+
     public void TestQuest(string NPC_name)
     {
         switch (NPC_name)
@@ -80,7 +85,7 @@ public class GameManager : MonoBehaviour
                 break;
             case ("Rencontre1"):
                 EndQuest_1();
-                UnlockQuest_2();
+                Invoke("UnlockQuest_2", 3.0f);
                 break;
             case ("Combat1"):
                 listOfNPC[0].GetComponent<NPC_Behavior>().SetAttackRange(1);
@@ -140,6 +145,7 @@ public class GameManager : MonoBehaviour
                 GameObject parchemin = Instantiate(parcheminPrefab, parcheminParent);
                 parchemin.GetComponentInChildren<ParcheminErrorText>().setPlayer(player);
                 player.GetComponent<PlayerMovement>().setStopped(true);
+                parcheminQuest.ChangeColorIcon(new Vector3(0, 200, 0));
                 break;
             case 2:
                 DemonSwordAudioSource.Play();
@@ -194,7 +200,7 @@ public class GameManager : MonoBehaviour
         setTextQuest("Total de tomates ramassées: " + tomatoCollected + "/15");
         ShowQuest();
         tomatoQuest.IncreaseDialogLine();
-        tomatoQuest.ChangeColorIcon(new Vector3(50, 50, 50));
+        tomatoQuest.ChangeColorIcon(new Vector3(25, 25, 25));
     }
 
     public void UnlockQuest_2()
@@ -213,7 +219,7 @@ public class GameManager : MonoBehaviour
         setTextQuest("Parchemin collecté : 0/1");
         ShowQuest();
         parcheminQuest.IncreaseDialogLine();
-        parcheminQuest.ChangeColorIcon(new Vector3(50, 50, 50));
+        parcheminQuest.ChangeColorIcon(new Vector3(25, 25, 25));
     }
 
     public void UnlockQuest_4()
@@ -245,6 +251,7 @@ public class GameManager : MonoBehaviour
         titleQuest.gameObject.SetActive(true);
         Invoke("HideQuest", 4.0f);
         tomatoQuest.setVisibilityIcon(true);
+        tomatoQuest.ChangeColorIcon(new Vector3(207, 178, 38));
     }
 
     public void EndQuest_1()
@@ -264,6 +271,7 @@ public class GameManager : MonoBehaviour
         isQuestActive = false;
         NPCToTalkTo = listOfNPC[4];
         parcheminQuest.setVisibilityIcon(true);
+        parcheminQuest.ChangeColorIcon(new Vector3(207, 178, 38));
     }
 
     public void EndQuest_3()

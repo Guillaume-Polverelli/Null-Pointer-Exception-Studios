@@ -4767,6 +4767,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 408904, guid: 4cc487e002327cb43995ca1871bd142e, type: 3}
   m_PrefabInstance: {fileID: 200668564}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &201338601 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1005409422162671737, guid: bc64360e754854241a972c7fa533e96f, type: 3}
+  m_PrefabInstance: {fileID: 1564057045}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &202837213 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f94db4a1d082a6543a9f6fe1aaf6dd93, type: 3}
@@ -25507,6 +25512,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 503982316}
     - target: {fileID: 3156955694209471641, guid: 9ceadef55b9c4eb43bcc76df4574924a, type: 3}
+      propertyPath: questionMark
+      value: 
+      objectReference: {fileID: 1873390358}
+    - target: {fileID: 3156955694209471641, guid: 9ceadef55b9c4eb43bcc76df4574924a, type: 3}
       propertyPath: isGivingQuest
       value: 1
       objectReference: {fileID: 0}
@@ -38534,15 +38543,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1005409422495314865, guid: bc64360e754854241a972c7fa533e96f, type: 3}
       propertyPath: m_Color.b
-      value: 0.14503376
+      value: 0.14848696
       objectReference: {fileID: 0}
     - target: {fileID: 1005409422495314865, guid: bc64360e754854241a972c7fa533e96f, type: 3}
       propertyPath: m_Color.g
-      value: 0.68098265
+      value: 0.6988399
       objectReference: {fileID: 0}
     - target: {fileID: 1005409422495314865, guid: bc64360e754854241a972c7fa533e96f, type: 3}
       propertyPath: m_Color.r
-      value: 0.7924528
+      value: 0.8113208
       objectReference: {fileID: 0}
     - target: {fileID: 1084818158584904652, guid: bc64360e754854241a972c7fa533e96f, type: 3}
       propertyPath: m_Radius
@@ -38608,6 +38617,10 @@ PrefabInstance:
       propertyPath: textToHUD
       value: 
       objectReference: {fileID: 503982316}
+    - target: {fileID: 3156955694209471641, guid: bc64360e754854241a972c7fa533e96f, type: 3}
+      propertyPath: questionMark
+      value: 
+      objectReference: {fileID: 201338601}
     - target: {fileID: 3156955694209471641, guid: bc64360e754854241a972c7fa533e96f, type: 3}
       propertyPath: isGivingQuest
       value: 1
@@ -38719,7 +38732,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3156955694209471641, guid: bc64360e754854241a972c7fa533e96f, type: 3}
       propertyPath: dialogue.Array.data[1].sentences.Array.data[2]
-      value: 1,Mais qu'est-ce que tu attends ?!
+      value: 1;Mais qu'est-ce que tu attends ?!
       objectReference: {fileID: 0}
     - target: {fileID: 3156955694209471641, guid: bc64360e754854241a972c7fa533e96f, type: 3}
       propertyPath: dialogue.Array.data[2].sentences.Array.data[0]
@@ -38747,7 +38760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3156955694209471641, guid: bc64360e754854241a972c7fa533e96f, type: 3}
       propertyPath: dialogue.Array.data[0].sentences.Array.data[12]
-      value: 1; et que vous me ramenez de quoi manger, je vous donnerai un indice
+      value: 1;et que vous me ramenez de quoi manger, je vous donnerai un indice
         !
       objectReference: {fileID: 0}
     - target: {fileID: 3156955694209471641, guid: bc64360e754854241a972c7fa533e96f, type: 3}
@@ -47012,6 +47025,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 408904, guid: 4cc487e002327cb43995ca1871bd142e, type: 3}
   m_PrefabInstance: {fileID: 1873187413}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1873390358 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7500841936960874457, guid: 9ceadef55b9c4eb43bcc76df4574924a, type: 3}
+  m_PrefabInstance: {fileID: 1038068067}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1876486880
 PrefabInstance:
